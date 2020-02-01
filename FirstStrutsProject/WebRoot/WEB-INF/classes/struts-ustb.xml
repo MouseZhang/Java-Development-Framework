@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<!-- 所有的struts 2.x程序都要求设置命名空间 -->
+	<!-- package定义页面的可执行路径，每一个package下具有多个action的配置 -->
+	<!-- namespace表示的是整个k可以访问程序的公共路径，有了这个路径后在此包中配置的一切页面，如果
+	没有明确声明都是在此路径下的 -->
+	<package name="root" namespace="/" extends="struts-default">
+		<!-- 配置程序所需要的Action名称以及对应的类型  namespace/result -->
+		<action name="EchoAction" class="cn.ustb.action.EchoAction">
+			<!-- 定义跳转路径 -->
+			<!-- type="dispatcher"是默认的跳转形式，表示服务器端跳转 -->
+			<!-- type="redirect" 表示客户端跳转，跳转后路径发生改变 -->
+			<!-- type="redirect-action" 表示跳转到另外一个action中 -->
+	   <!-- <result name="success" type="dispatcher">echo.jsp</result> -->
+			<result name="echo.page" type="dispatcher">echo.jsp</result>
+		</action>
+	</package>
+</struts>    
