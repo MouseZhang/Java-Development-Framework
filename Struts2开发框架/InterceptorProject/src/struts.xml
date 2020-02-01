@@ -3,6 +3,13 @@
 <struts>
 	<package name="root" namespace="/" extends="struts-default">
 		<interceptors>
+			<!-- 定义拦截器栈 -->
+			<interceptor-stack name="ustbStack">
+				<interceptor-ref name="timer"/>
+				<interceptor-ref name="login"/>
+				<interceptor-ref name="ustb"/>
+				<interceptor-ref name="defaultStack"/>
+			</interceptor-stack>
 			<interceptor name="ustb" class="cn.ustb.interceptor.MyInterceptor"/>
 			<interceptor name="login" class="cn.ustb.interceptor.LoginInterceptor"/>
 		</interceptors>
@@ -10,13 +17,14 @@
 			<result name="forward.page">forward.jsp</result>
 		</global-results>
 		<action name="MessageAction" class="cn.ustb.action.MessageAction">
-			<interceptor-ref name="timer"/>
+		<!-- <interceptor-ref name="timer"/> -->
 			<!-- 如果编写自定义拦截器，所有的操作必须手工模式配置 -->
 			<!-- 所有的拦截器会按照既定的顺序依次向下执行，一般是先进行登录验证，而后进行其他操作 -->
-			<interceptor-ref name="login"/>
-			<interceptor-ref name="ustb"/>
-			<interceptor-ref name="defaultStack"/>
+		<!-- <interceptor-ref name="login"/> -->
+		<!-- <interceptor-ref name="ustb"/> -->
+		<!-- <interceptor-ref name="defaultStack"/> -->
+			<interceptor-ref name="ustbStack"/>
 		</action>
 	</package>
 	<package name="front" namespace="/front" extends="root"></package>
-</struts>    
+</struts>
