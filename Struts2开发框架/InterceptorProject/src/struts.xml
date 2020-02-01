@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<package name="root" namespace="/" extends="struts-default">
+		<interceptors>
+			<interceptor name="ustb" class="cn.ustb.interceptor.MyInterceptor"/>
+			<interceptor name="login" class="cn.ustb.interceptor.LoginInterceptor"/>
+		</interceptors>
+		<global-results> <!-- dtd标准下，global-results必须放在interceptors之后 -->
+			<result name="forward.page">forward.jsp</result>
+		</global-results>
+		<action name="MessageAction" class="cn.ustb.action.MessageAction">
+			<interceptor-ref name="timer"/>
+			<!-- 如果编写自定义拦截器，所有的操作必须手工模式配置 -->
+			<!-- 所有的拦截器会按照既定的顺序依次向下执行，一般是先进行登录验证，而后进行其他操作 -->
+			<interceptor-ref name="login"/>
+			<interceptor-ref name="ustb"/>
+			<interceptor-ref name="defaultStack"/>
+		</action>
+	</package>
+	<package name="front" namespace="/front" extends="root"></package>
+</struts>    
