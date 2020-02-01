@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE validators PUBLIC "-//OpenSymphony Group//XWork Validator 1.0.2//EN" "http://www.opensymphony.com/xwork/xwork-validator-1.0.2.dtd">
+<validators>
+	<field name="news.nid">
+	<!-- 先进行数据的有效性验证，再进行数据为空的验证 -->
+		<field-validator type="int">
+			<param name="min">10</param>
+			<param name="max">30</param>
+			<message>新闻编号的范围只能够输入：${min}~${max}之间！</message>
+		</field-validator>
+		<field-validator type="requiredstring">
+			<message>【验证框架】新闻编号不允许为空!</message>
+		</field-validator>
+	</field>
+	<field name="news.title">
+		<field-validator type="stringlength">
+			<param name="minLength">6</param>
+			<param name="maxLength">15</param>
+			<message>新闻标题输入错误，其长度应该在：${minLength}~${maxLength}之间！</message>
+		</field-validator>
+		<field-validator type="requiredstring">
+			<message>【验证框架】新闻标题不允许为空!</message>
+		</field-validator>
+	</field>
+	<field name="news.content">
+		<field-validator type="regex">
+			<param name="trim">true</param> <!-- 去掉左右空格 -->
+			<param name="expression"><![CDATA[\w+\.\w+\.\w+]]></param>
+			<message>请输入正确的网址内容！</message>
+		</field-validator>
+		<field-validator type="requiredstring">
+			<message>【验证框架】新闻内容不允许为空!</message>
+		</field-validator>
+	</field>
+	<field name="news.pubdate">
+		<field-validator type="date">
+			<param name="min">1900-01-01</param>
+			<param name="max">2200-12-31</param>
+			<message>发布日期的范围应该在：${min}~${max}之间！</message>
+		</field-validator>
+		<field-validator type="requiredstring">
+			<message>【验证框架】发布日期不允许为空!</message>
+		</field-validator>
+	</field>
+</validators>
