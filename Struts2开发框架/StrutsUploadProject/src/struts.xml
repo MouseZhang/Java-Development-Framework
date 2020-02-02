@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<package name="root" namespace="/" extends="struts-default">
+		<action name="UploadAction" class="cn.ustb.action.UploadAction">
+			<interceptor-ref name="fileUpload">
+				<param name="maximumSize">10000</param>
+				<param name="allowedTypes">
+					image/bmp,image/jpg,image/jpeg,image/png,image/gif
+				</param>
+			</interceptor-ref>
+			<interceptor-ref name="defaultStack"/>
+			<result name="input">upload.jsp</result>
+		</action>
+	</package>
+</struts>    
