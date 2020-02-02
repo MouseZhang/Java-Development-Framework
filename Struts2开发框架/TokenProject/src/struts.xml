@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<package name="root" namespace="/" extends="struts-default">
+		<action name="PrepareAction" class="cn.ustb.action.PrepareAction">
+			<result name="input.page">input.jsp</result>
+		</action>
+		<action name="MessageAction" class="cn.ustb.action.MessageAction">
+			<result name="invalid.token">input.jsp</result>
+			<!-- 使用拦截器对token校验 -->
+			<interceptor-ref name="token"/>
+			<interceptor-ref name="defaultStack"/>
+		</action>
+	</package>
+</struts>    
