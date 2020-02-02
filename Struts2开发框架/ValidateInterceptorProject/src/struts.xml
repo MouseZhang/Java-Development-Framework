@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<package name="root" namespace="/" extends="struts-default">
+		<interceptors>
+			<interceptor name="validate" class="cn.ustb.util.interceptor.ValidateInterceptor"/>
+		</interceptors>
+		<action name="NewsAction" class="cn.ustb.action.NewsAction">
+			<!-- 先进行数据的合法性检查 -->
+			<interceptor-ref name="validate"/>
+			<!-- 合法性检查通过后才能进行赋值操作 -->
+			<interceptor-ref name="defaultStack"/>
+			<result name="news.show">news_show.jsp</result>
+			<result name="input">news_insert.jsp</result>
+			<result name="insertVF">news_insert.jsp</result>
+		</action>
+	</package>
+</struts>    
