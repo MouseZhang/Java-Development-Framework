@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<package name="root" namespace="/" extends="struts-default">
+		<action name="InputAction" class="cn.ustb.action.InputAction">
+		</action>
+		<action name="MemberAction" class="cn.ustb.action.MemberAction">
+		</action>
+		<action name="LocaleAction" class="cn.ustb.action.LocaleAction">
+		</action>
+		<action name="NewsAction" class="cn.ustb.action.NewsAction">
+		</action>
+		<action name="PointAction" class="cn.ustb.action.PointAction">
+			<result name="success">show.jsp</result>
+		</action>
+	</package>
+</struts>    
