@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<package name="root" namespace="/" extends="struts-default">
+		<!-- 定义拦截器 -->
+		<interceptors>
+			<interceptor-stack name="ustbStack">
+				<interceptor-ref name="timer"/>
+				<interceptor-ref name="defaultStack"/>
+			</interceptor-stack>
+		</interceptors>
+		<!-- 配置公共跳转路径 -->
+		<global-results>
+			<result name="forward">/pages/forward.jsp</result>
+			<result name="input">/pages/errors.jsp</result>
+		</global-results>
+	</package>
+</struts>    
