@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+          "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+          "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<!-- 此处表示进行Hibernate的配置操作，所有的配置通过Configuration类取得 -->
+<hibernate-configuration>
+	<!-- 定义Hibernate的连接工厂类，主要负责数据库连接的取得 -->
+<session-factory>
+	<!-- 此操作的主要意义在于MyEclipse配置使用，开发无用 -->
+	<property name="myeclipse.connection.profile">mysql</property>
+	<!-- 数据库的连接方言，如果要修改使用数据库，修改方言即可 -->
+	<property name="dialect">
+		org.hibernate.dialect.MySQLDialect
+	</property>
+	<!-- 数据库连接的密码 -->
+	<property name="connection.password">root123</property>
+	<!-- 数据库连接的用户名 -->
+	<property name="connection.username">root</property>
+	<!-- 数据库的连接地址，若连接数据库发生乱码(MySQL5.5会有乱码)可以填写：
+		jdbc:mysql://localhost:3306/hdb?characterEncoding=UTF8 -->
+	<property name="connection.url">
+		jdbc:mysql://localhost:3306/hdb
+	</property>
+	<!-- 数据库的连接驱动程序 -->
+	<property name="connection.driver_class">
+		org.gjt.mm.mysql.Driver
+	</property>
+	<!-- 显示执行的SQL语句 -->
+	<property name="show_sql">true</property>
+	<!-- 格式化SQL语句 -->
+	<property name="format_sql">true</property>
+	<!-- 配置所有的*.hbm.xml文件的路径 -->
+	<mapping resource="cn/ustb/pojo/Member.hbm.xml" />
+</session-factory>
+</hibernate-configuration>

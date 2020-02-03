@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 定义的是XML文件的文档结构，必须按照指定的顺序与名称编写文件 -->
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<!-- 定义简单Java类的完整名称，通过反射加载 -->
+	<!-- 每一个映射文件都要求有一个与之对应的POJO类存在，此文件的作用是描述POJO类与数据表的字段映射 -->
+	<!-- name属性描述的是POJO类，而table属性描述的是这个类对应的数据表 -->
+	<!-- catalog表示的是操作的模式名称（数据库名称），一般可以省略 -->
+    <class name="cn.ustb.pojo.Member" table="member" catalog="hdb">
+    	<!-- 每一张实体表都一定包含一个主键的列，所以此处描述主键列 -->
+    	<!-- name描述的是在POJO类中的属性名称，type描述的是POJO属性的类型 -->
+        <id name="mid" type="java.lang.String">
+        	<!-- 此POJO类的属性与数据表中的列的对应关系 -->
+        	<!-- name表示列名称，而length表示的是name列在表中定义的长度 -->
+            <column name="mid" length="50" />
+            <!-- 表示主键的生成方式，本次使用的是指派模式 -->
+            <!-- assigned：用户指派模式，自己输入 -->
+            <!-- native：由数据表自动负责增长的列 -->
+            <!-- uuid.hex/string：生成一个无重复的十六进制的字符串 -->
+            <generator class="assigned"></generator>
+        </id>
+        <!-- 后面定义的都是类中的属性，以及表中的非主键的映射关系 -->
+        <!-- 此处描述的是映射name类属性，以及name数据列的关系 -->
+        <property name="name" type="java.lang.String">
+            <column name="name" length="50" />
+        </property>
+        <property name="age" type="java.lang.Integer">
+            <column name="age" />
+        </property>
+        <property name="salary" type="java.lang.Double">
+            <column name="salary" precision="22" scale="0" />
+        </property>
+        <property name="birthday" type="java.util.Date">
+            <column name="birthday" length="10" />
+        </property>
+        <property name="note" type="java.lang.String">
+            <column name="note" length="65535" />
+        </property>
+    </class>
+</hibernate-mapping>
