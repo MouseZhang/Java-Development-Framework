@@ -1,0 +1,20 @@
+#MyEclipse Hibernate Properties
+#Wed Feb 05 14:36:52 CST 2020
+genBasicCompId=true
+sessionFactoryName=cn.ustb.dbc.HibernateSessionFactory
+profile=
+daoSFId=
+jndiPath=
+detectM2M=false
+reStrategyClass=
+detectO2O=false
+springDaoFile=
+useJavaTypes=true
+keyGenerator=assigned
+genVersionTag=false
+sessionFactoryId=
+basePersistenceClass=
+genAnnotations=true
+reSettingsFile=/UserTypeProject/hibernate.reveng.xml
+configFile=/UserTypeProject/src/hibernate.cfg.xml
+createConfigFile=true
