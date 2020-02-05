@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="cn.ustb.pojo.Member" table="member" catalog="hdb">
+        <id name="mid" type="java.lang.String">
+            <column name="mid" length="50" />
+            <generator class="assigned"></generator>
+        </id>
+        <property name="name" type="java.lang.String">
+            <column name="name" length="50" />
+        </property>
+        <map name="emails" table="email">
+        	<key>
+        		<column name="mid" length="50" />
+        	</key>
+        	<!-- 描述Map集合中的key对应的数据关系 -->
+        	<map-key type="java.lang.String" column="title" />
+        	<!-- 描述Map集合中的value对应的数据关系 -->
+        	<element type="java.lang.String" column="als" />
+        </map>
+   <!--     <list name="emails" table="email"> -->
+        <!-- email与member表的关联靠的是mid这个外键 -->
+     <!--   	<key>	 -->
+       <!--         <column name="mid" length="50" /> -->
+      <!--      </key> -->
+            <!-- 负责处理数据的索引数值 -->
+      <!--      <index column="foot" /> -->
+     <!--       <element type="java.lang.String" column="title" /> -->
+   <!--     </list> -->
+        <!-- 容器映射之中emails这个集合对应的是email数据表 -->
+     <!--   <set name="emails" table="email">  -->
+     	<!-- email与member表的关联靠的是mid这个外键 -->
+       <!--     <key>  -->
+      <!--          <column name="mid" length="50" />  -->
+      <!--      </key>  -->
+            <!-- 在进行集合操作的时候email表里面对应title属性操作 -->
+      <!--      <element type="java.lang.String" column="title" />  -->
+     <!--   </set>  -->
+    </class>
+</hibernate-mapping>
