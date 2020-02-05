@@ -1,0 +1,17 @@
+<ehcache>
+	<!-- 指的是缓存的临时保存目录 -->
+	<diskStore path="java.io.tmpdir" />
+	<!-- 
+		maxElementsInMemory：可以缓存的最大POJO类对象个数
+		eternal：是否允许该缓存自动失效
+		timeToIdleSeconds：最小的失效时间
+		timeToLiveSeconds：最大的保存时间
+		overflowToDisk：如果保存过多利用磁盘存储缓存数据
+	 -->
+	<defaultCache
+		maxElementsInMemory="10000"
+		eternal="false"
+		timeToIdleSeconds="120"
+		timeToLiveSeconds="120"
+		overflowToDisk="true" />
+</ehcache>
