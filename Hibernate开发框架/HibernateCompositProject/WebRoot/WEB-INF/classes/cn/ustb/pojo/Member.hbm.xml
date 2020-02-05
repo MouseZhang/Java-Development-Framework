@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="cn.ustb.pojo.Member" table="member" catalog="hdb">
+    	<!-- 取代的是id元素，表示此时的id是一个复合主键 -->
+        <composite-id name="id" class="cn.ustb.pojo.MemberId">
+            <key-property name="mid" type="java.lang.String">
+                <column name="mid" length="50" />
+            </key-property>
+            <key-property name="name" type="java.lang.String">
+                <column name="name" length="50" />
+            </key-property>
+        </composite-id>
+        <property name="age" type="java.lang.Integer">
+            <column name="age" />
+        </property>
+    </class>
+</hibernate-mapping>
