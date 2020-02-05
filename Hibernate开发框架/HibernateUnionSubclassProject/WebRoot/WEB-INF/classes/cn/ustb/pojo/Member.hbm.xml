@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="cn.ustb.pojo.Member" catalog="hdb">
+        <id name="mid" type="java.lang.String">
+            <column name="mid" length="50" />
+            <generator class="assigned"></generator>
+        </id>
+        <property name="name" type="java.lang.String">
+            <column name="name" length="50" />
+        </property>
+        <property name="age" type="java.lang.Integer">
+            <column name="age" />
+        </property>
+        <!-- 表示学生信息 -->
+        <union-subclass name="cn.ustb.pojo.Student" table="student" catalog="hdb">
+	        <property name="school" type="java.lang.String">
+	            <column name="school" length="50" />
+	        </property>
+	        <property name="score" type="java.lang.Double">
+	            <column name="score" precision="22" scale="0" />
+	        </property>
+        </union-subclass>
+        <!-- 表示工人信息 -->
+        <union-subclass name="cn.ustb.pojo.Worker" table="worker" catalog="hdb">
+	        <property name="company" type="java.lang.String">
+	            <column name="company" length="50" />
+	        </property>
+	        <property name="salary" type="java.lang.Double">
+	            <column name="salary" precision="22" scale="0" />
+	        </property>
+        </union-subclass>
+    </class>
+</hibernate-mapping>
