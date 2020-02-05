@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<!-- 不管如何操作，每一个*.hbm.xml文件只会与一个POJO类关联 -->
+    <class name="cn.ustb.pojo.Member" table="member" catalog="hdb">
+        <id name="mid" type="java.lang.String">
+            <column name="mid" length="50" />
+            <generator class="assigned"></generator>
+        </id>
+        <!-- 此处配置的Member类中的basic属性的类型及包含内容 -->
+        <component name="basic" class="cn.ustb.pojo.MemberBasic">
+	        <property name="name" type="java.lang.String">
+	            <column name="name" length="50" />
+	        </property>
+	        <property name="age" type="java.lang.Integer">
+	            <column name="age" />
+	        </property>
+	        <property name="birthday" type="java.util.Date">
+	            <column name="birthday" length="10" />
+	        </property>
+        </component>
+        <!-- 此处配置的Member类中的contract属性的类型及包含内容 -->
+        <component name="contract" class="cn.ustb.pojo.MemberContract">
+	        <property name="address" type="java.lang.String">
+	            <column name="address" length="100" />
+	        </property>
+	        <property name="zipcode" type="java.lang.String">
+	            <column name="zipcode" length="8" />
+	        </property>
+	        <property name="phone" type="java.lang.String">
+	            <column name="phone" length="50" />
+	        </property>
+        </component>
+    </class>
+</hibernate-mapping>
