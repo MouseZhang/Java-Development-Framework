@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.1.xsd">
+	<bean id="apple" class="cn.ustb.demo.Apple"/>
+	<bean id="companyo" class="cn.ustb.vo.CompanyO" init-method="init" destroy-method="destory" />
+	<!-- p命名空间 -->
+	<bean id="deptp" class="cn.ustb.vo.Dept" p:deptno="30" p:dname="市场部" />
+	<bean id="companypro" class="cn.ustb.vo.CompanyPro">
+		<property name="msg">
+			<props>
+				<prop key="ustb">www.ustb.cn</prop>
+				<prop key="hello">hello world</prop>
+			</props>
+		</property>
+	</bean>
+	<bean id="companymap" class="cn.ustb.vo.CompanyMap">
+		<property name="msg">
+			<map key-type="java.lang.Integer" value-type="java.lang.String">
+				<entry key="1" value="ustb" />
+				<entry key="2" value="hello" />
+				<entry key="2" value="world" />
+			</map>
+		</property>
+	</bean>
+	<bean id="companyset" class="cn.ustb.vo.CompanySet">
+		<property name="msg">
+			<list value-type="java.lang.String">
+				<value>ustb</value>
+				<value>hello</value>
+				<value>hello</value>
+			</list>
+		</property>
+	</bean>
+	<bean id="companylist" class="cn.ustb.vo.CompanyList">
+		<property name="msg">
+			<list value-type="java.lang.String">
+				<value>ustb</value>
+				<value>hello</value>
+				<value>hello</value>
+			</list>
+		</property>
+	</bean>
+	<bean id="company" class="cn.ustb.vo.Company">
+		<property name="data">
+			<array value-type="java.lang.Integer">
+				<value>10</value>
+				<value>20</value>
+				<value>30</value>
+			</array>
+		</property>
+		<property name="msg">
+			<array value-type="java.lang.String">
+				<value>ustb</value>
+				<value>hello</value>
+			</array>
+		</property>
+	</bean>
+	<bean id="dept" class="cn.ustb.vo.Dept">
+		<property name="deptno" value="10" />
+		<!-- 不设置属性就是null -->
+		<property name="dname" value="开发部" />
+		<!-- 布尔值：true/false，yes/no，on/off，1/0 -->
+		<property name="close" value="no" />
+		<property name="emps">
+			<list>
+				<ref bean="empA"/>
+				<ref bean="empB"/>
+				<ref bean="empC"/>
+			</list>
+		</property>
+	</bean>
+	<!-- 自动装配 -->
+	<bean id="emp" class="cn.ustb.vo.Emp" autowire="default">
+		<property name="empno" value="7369" />
+		<property name="ename" value="SMITH" />
+	</bean>
+	<!-- 
+	<bean id="emp" class="cn.ustb.vo.Emp">
+		<property name="empno" value="7369" />
+		<property name="ename" value="SMITH" />
+		<property name="dept" ref="dept" />
+	</bean>
+	 -->
+	<bean id="empA" class="cn.ustb.vo.Emp">
+		<!-- 如果是具体的内容使用value，如果要引用其它bean使用ref -->
+		<property name="empno" value="7566" />
+		<property name="ename" value="ALLEN" />
+		<property name="dept" ref="dept" />
+	</bean>
+	<bean id="empB" class="cn.ustb.vo.Emp">
+		<!-- 如果是具体的内容使用value，如果要引用其它bean使用ref -->
+		<property name="empno" value="7839" />
+		<property name="ename" value="KING" />
+		<property name="dept" ref="dept" />
+	</bean>
+	<bean id="empC" class="cn.ustb.vo.Emp">
+		<!-- 如果是具体的内容使用value，如果要引用其它bean使用ref -->
+		<property name="empno" value="8104" />
+		<property name="ename" value="JONE" />
+		<property name="dept" ref="dept" />
+	</bean>
+	<bean id="depte" class="cn.ustb.vo.DeptE">
+		<!-- 表示明确调用类中的有参构造方法 -->
+		<!--<constructor-arg value="10"/>-->
+		<!--<constructor-arg value="开发部"/>-->
+		<!-- 不推荐使用 -->
+		<constructor-arg name="paramDname" value="开发部"/>
+		<constructor-arg name="paramDeptno" value="10"/>
+	</bean>
+</beans>
