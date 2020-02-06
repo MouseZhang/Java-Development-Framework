@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="cn.ustb.pojo.Member" catalog="hdb">
+        <id name="mid" type="java.lang.String">
+            <column name="mid" length="50" />
+            <generator class="assigned"></generator>
+        </id>
+        <!-- 需要由Hibernate自己维护type字段的内容 -->
+        <discriminator column="type" type="java.lang.String" />
+        <property name="name" type="java.lang.String">
+            <column name="name" length="50" />
+        </property>
+        <property name="age" type="java.lang.Integer">
+            <column name="age" />
+        </property>
+        <subclass name="cn.ustb.pojo.Student" discriminator-value="学生">
+	       <property name="school" type="java.lang.String">
+	           <column name="school" length="50" />
+	       </property>
+	       <property name="score" type="java.lang.Double">
+	           <column name="score" precision="22" scale="0" />
+	       </property>
+        </subclass>
+        <subclass name="cn.ustb.pojo.Worker" discriminator-value="工人">
+	       <property name="company" type="java.lang.String">
+	           <column name="company" length="50" />
+	       </property>
+	       <property name="salary" type="java.lang.Double">
+	           <column name="salary" precision="22" scale="0" />
+	       </property>
+        </subclass>
+    </class>
+</hibernate-mapping>
