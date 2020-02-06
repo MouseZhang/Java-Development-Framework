@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+    "-//Hibernate/Hibernate Configuration DTD//EN"
+    "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+  <session-factory>
+    <!-- 此操作的主要意义在于MyEclipse配置使用，开发无用 -->
+    <property name="myeclipse.connection.profile">mysql</property>
+    <!-- 数据库的连接方言，如果要修改使用数据库，修改方言即可 -->
+    <property name="dialect">
+      org.hibernate.dialect.MySQLDialect
+    </property>
+    <!-- 数据库连接的密码 -->
+    <property name="connection.password">root123</property>
+    <!-- 数据库连接的用户名 -->
+    <property name="connection.username">root</property>
+    <!-- 数据库的连接地址，若连接数据库发生乱码(MySQL5.5会有乱码)可以填写：
+        jdbc:mysql://localhost:3306/hdb?characterEncoding=UTF8 -->
+    <property name="connection.url">jdbc:mysql://localhost:3306/hdb</property>
+    <!-- 数据库的连接驱动程序 -->
+    <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+    <!-- 显示执行的SQL语句 -->
+    <property name="show_sql">true</property>
+    <!-- 格式化SQL语句 -->
+    <property name="format_sql">true</property>
+    <mapping class="cn.ustb.pojo.Member"/>
+  </session-factory>
+</hibernate-configuration>
