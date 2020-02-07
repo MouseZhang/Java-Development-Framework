@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.1.xsd">
+	<!-- 定义资源信息 -->
+	<bean id="rb" class="cn.ustb.resource.util.ResourceBean">
+		<property name="resource"  value="file:D:\\test.txt"/>
+	</bean>
+	<bean id="rblist" class="cn.ustb.resource.util.ResourceList">
+		<property name="resource">
+			<list>
+				<value>file:D:\\test.txt</value>
+				<value>classpath:META-INF/license.txt</value>
+				<value>http://localhost:8080/RELEASE-NOTES.txt</value>
+			</list>
+		</property>
+	</bean>
+</beans>
