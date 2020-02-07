@@ -29,7 +29,7 @@ public class TestELDemoU {
 		Expression exp = parser.parseExpression(pstr);
 		EvaluationContext context = new StandardEvaluationContext();
 		context.setVariable("allData", all);
-		System.out.println(exp.getValue(context)); // 行成了一个新的List
+		System.out.println(exp.getValue(context)); // 形成了一个新的List
 		System.out.println(all);
 	}
 }
