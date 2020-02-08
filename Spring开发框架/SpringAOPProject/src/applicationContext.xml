@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.1.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.1.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.1.xsd">
+	<!-- 配置Annotation开发支持 -->
+	<context:annotation-config/>
+	<context:component-scan base-package="cn.ustb"/>
+	<!-- 定义引用切面 -->
+	<aop:config>
+		<!-- 首先定义程序的切入点 -->
+		<!-- AspectJ的语法定义：切入点表达式
+			execution(public * cn.ustb..*.*(..))
+			execution(修饰符匹配?返回值类型 操作类型匹配? 名称匹配(参数匹配) 抛出异常匹配)
+			1、修饰符：“public”与private，不写默认public，只能出现0次或1次
+			2、返回值：“*”，如果使用*，表示返回任意类型
+			3、名称匹配：cn.ustb..*.*，表示的是具体要使用此切面的程序类，如果写上cn.ustb则表示是这个包中的，
+			而如果后面出现了“..”表示在任意结构子包下，“*.*”表示任意类的任意方法
+			4、方法参数：“(..)”，使用“..”表示匹配任意多个参数，如果使用的是“*”表示匹配任意一个参数
+		 -->
+		<aop:pointcut expression="execution(* cn.ustb..*.*(..))" id="pointcut"/>
+		<!-- 定义要使用的面向方面的处理类 -->
+		<aop:aspect ref="serviceAspect">
+			<aop:before method="serviceBefore" pointcut-ref="pointcut"/>
+			<aop:before method="serviceMethod" pointcut="execution(* cn.ustb..*.*(..)) and args(vo)" arg-names="vo"/>
+			<aop:after method="serviceAfter" pointcut="execution(* cn.ustb..*.*(..))"/>
+			<aop:after-returning method="serviceAfterReturning" pointcut="execution(* cn.ustb..*.*(..))" returning="haha" arg-names="haha"/>
+			<aop:after-throwing method="serviceAfterThrowing" pointcut="execution(* cn.ustb..*.*(..))" arg-names="e" throwing="e"/>
+			<aop:around method="serviceAround" pointcut="execution(* cn.ustb..*.*(..))" />		
+		</aop:aspect>
+	</aop:config>
+</beans>
