@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project adv-config="true">
+  <add-on id="web.struts2.spring"/>
+  <add-on id="spring.web"/>
+  <add-on id="spring.persistence"/>
+  <container path="com.genuitec.runtime.library/com.genuitec.spring_4.1">
+    <disable name="c3p0-0.9.2.1.jar" type="jar"/>
+    <custom-jar path="D:lib/zz/c3p0-0.9.1.2.jar"/>
+  </container>
+</project>
