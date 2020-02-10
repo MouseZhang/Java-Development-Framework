@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xsi:schemaLocation="http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.1.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.1.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.1.xsd">
+	<!-- Spring MVC也是基于Annotation实现的配置 -->
+	<context:annotation-config/>
+	<context:component-scan base-package="cn.ustb"/>
+	<!-- 要定义Spring MVC的处理 -->
+	<mvc:annotation-driven/>
+	<mvc:default-servlet-handler/>
+	<!-- 配置拦截器 -->
+	<mvc:interceptors>
+		<mvc:interceptor>
+			<mvc:mapping path="/pages/**/*.action"/> <!-- 表示pages下的任何目录下的任何*.action执行都进行拦截 -->
+			<bean class="cn.ustb.interceptor.MyHandlerInterceptor"></bean>
+		</mvc:interceptor>
+	</mvc:interceptors>
+	<!-- 定义安全访问 -->
+	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="prefix" value="/WEB-INF/pages/"></property> <!-- prefix表示前部标记 -->
+		<property name="suffix" value=".jsp"></property> <!-- suffix表示后部标记 -->
+	</bean>
+	<!-- 配置资源文件读取 -->
+	<bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource">
+		<property name="basenames">
+			<array>
+				<value>Messages</value>
+				<value>Pages</value>
+			</array>
+		</property>
+	</bean>
+	<!-- 配置文件上传工具类 -->
+	<bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+		<property name="maxUploadSize" value="5242880"/> <!-- 上传文件的最大值 5MB -->
+		<property name="maxInMemorySize" value="2097152"/> <!-- 占用内存的最大值 2MB -->
+	</bean>
+	<!-- 错误配置方式一： -->
+	<bean id="exceptionMapping" class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">
+		<property name="exceptionMappings">
+			<props>
+				<!-- 由于整个项目里面已经配置好了安全的访问操作，所以此时的路径会自动利用之前的安全访问路径而后进行跳转 -->
+				<!-- 也就是需要在/WEB-INF/pages 目录下提供有一个errors.jsp页面显示错误信息 -->
+				<prop key="org.springframework.web.multipart.MaxUploadSizeExceededException"> 
+					errors
+				</prop>
+			</props>
+		</property>
+	</bean>
+</beans>
