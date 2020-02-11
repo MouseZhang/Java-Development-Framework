@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="cn.ustb.pojo.MemberLogin" table="member_login" catalog="hdb">
+        <id name="mid" type="java.lang.String">
+            <column name="mid" length="50" />
+            <generator class="assigned"></generator>
+        </id>
+        <property name="password" type="java.lang.String">
+            <column name="password" length="32" />
+        </property>
+        <!-- 明确表示了此处配置一对一的映射关系
+        	其中，name表示类中的属性，class表示对应的类型，cascade是用于配置主表子表的级联操作
+        	fetch表示查询模式，默认join多表连接组合查询，改为select单查询实现，避免多表查询 -->
+        <one-to-one 
+        	name="memberDetails" 
+        	class="cn.ustb.pojo.MemberDetails"
+        	cascade="all"
+        	fetch="select"></one-to-one>
+    </class>
+</hibernate-mapping>

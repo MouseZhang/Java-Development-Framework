@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="cn.ustb.pojo.MemberDetails" table="member_details" catalog="hdb">
+        <id name="mid" type="java.lang.String">
+            <column name="mid" length="50" />
+            <generator class="assigned"></generator>
+        </id>
+        <!-- 明确表示了此处配置一对一的映射关系
+        	其中，name表示类中的属性，class表示对应的类型，constrained是约束属性，表示先增加主表数据而后再增加子表数据，如果不配置表示先增加子表再增加主表 -->
+        <one-to-one name="memberLogin" class="cn.ustb.pojo.MemberLogin" constrained="true"></one-to-one>
+        <property name="name" type="java.lang.String">
+            <column name="name" length="50" />
+        </property>
+        <property name="email" type="java.lang.String">
+            <column name="email" length="50" />
+        </property>
+        <property name="phone" type="java.lang.String">
+            <column name="phone" length="50" />
+        </property>
+    </class>
+</hibernate-mapping>
