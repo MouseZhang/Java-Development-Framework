@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:security="http://www.springframework.org/schema/security"
+	xsi:schemaLocation="http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security-3.2.xsd
+		http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.1.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.1.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.1.xsd">
+	<!-- Spring MVC也是基于Annotation实现的配置 -->
+	<context:annotation-config/>
+	<context:component-scan base-package="cn.ustb"/>
+	<!-- 要定义Spring MVC的处理 -->
+	<mvc:annotation-driven/>
+	<mvc:default-servlet-handler/>
+	<!-- 定义安全访问 -->
+	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="prefix" value="/WEB-INF/pages/"></property> <!-- prefix表示前部标记 -->
+		<property name="suffix" value=".jsp"></property> <!-- suffix表示后部标记 -->
+	</bean>
+	<!-- 使用C3P0数据库连接池 -->
+	<!-- 在本程序中设置要导入的资源文件路径，直接通过classpath加载 -->
+	<!-- 最好修改Spring4默认Lib，替换为c3p0.9.2.1.jar包 -->
+	<context:property-placeholder location="classpath:database.properties"/>
+	<bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
+		<property name="driverClass" value="${db.driver}"/>	<!-- 驱动程序 -->
+		<property name="jdbcUrl" value="${db.url}"/> <!-- 连接地址 -->
+		<property name="user" value="${db.user}"/> <!-- 用户名 -->
+		<property name="password" value="${db.password}"/> <!-- 密码 -->
+		<property name="maxPoolSize" value="${pool.max}"/> <!-- 最大的可用连接数 -->
+		<property name="minPoolSize" value="${pool.min}"/> <!-- 最小维持的连接数 -->
+		<property name="initialPoolSize" value="${pool.init}"/> <!-- 初始化连接数 -->
+		<property name="maxIdleTime" value="${pool.idle}"/> <!-- 最大的等待连接 -->
+	</bean>
+	<!-- 配置Jdbc Template -->
+	<bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
+		<property name="dataSource" ref="dataSource"/>
+	</bean>
+	<!-- 定义投票器 -->
+	<bean id="accessDes" class="org.springframework.security.access.vote.AffirmativeBased">
+		<property name="decisionVoters">
+			<list>
+				<bean class="org.springframework.security.access.vote.RoleVoter"/>
+				<bean class="org.springframework.security.access.vote.AuthenticatedVoter"/>
+				<bean class="cn.ustb.vote.IPAddressVote"/>
+			</list>
+		</property>
+	</bean> 
+	<!-- 启动Spring的安全验证，其中access-decision-manager-ref是引用投票器，也可以不使用投票器 -->
+	<security:global-method-security jsr250-annotations="enabled" secured-annotations="enabled" access-decision-manager-ref="accessDes"/>
+	<!-- 使用默认的安全配置操作，如果出现了授权访问错误，则跳转到403.jsp页面 -->
+	<!-- <security:http auto-config="true" access-denied-page="/403.jsp"/> 自动完成--> 
+	<!-- 
+		login-page=登录页面的路径
+		login-processing-url=登录页面的提交路径
+		default-target-url=登陆后的首页
+		authentication-failure-url=登录出错后的跳转页
+		logout-success-url=注销后的跳转页
+		delete-cookies=注销后清除的COOKIE
+		invalid-session-url=Session失效后跳转的路径
+		max-sessions=每个账号登录的人数
+		error-if-maximum-exceeded=如果超过最大值的警告
+		expired-url=失效后的地址
+	 -->
+	<security:http access-denied-page="/403.jsp">
+		<!-- 基于浏览器的记住密码，记住用户名3600秒，保存在Cookie中 -->
+		<!-- data-source-ref基于数据库的记住Cookie -->
+		<security:remember-me token-validity-seconds="3600" data-source-ref="dataSource"/>
+		<!-- 添加验证码时，只保留登录页和登录路径： 
+		<security:form-login 
+			login-page="/login.jsp"
+			login-processing-url="/login"
+			default-target-url="/pages/back/message/message_list.action"
+			authentication-failure-url="/login.jsp?error=true"/>
+		-->
+		<security:form-login login-page="/login.jsp"
+			login-processing-url="/login" />
+		<security:logout
+			logout-success-url="/login.jsp"
+			delete-cookies="JSESSIONID"/>
+		<!-- 配置Session管理操作，如果Session失效跳转到login.jsp -->
+		<security:session-management invalid-session-url="/login.jsp?ses=invalid">
+			<security:concurrency-control max-sessions="3" error-if-maximum-exceeded="true" expired-url="/login.jsp?ses=destory"/>
+		</security:session-management>
+	</security:http>
+	<!-- 配置授权管理器，日后即便使用了数据库的验证，此处也要配置授权管理器 -->
+	<security:authentication-manager alias="authenticationManager">
+		<!-- 定义用户的基本权限信息，本处使用的是固定信息 -->
+		<!-- 方式三：利用UserDetailsService接口实现自定义认证管理器实现登录，之前没有user-service-ref -->
+		<security:authentication-provider user-service-ref="userDetailsImpl">
+			<!-- 创建固定的用户名与密码验证 -->
+			<!-- 固定的用户名与密码 
+			<security:user-service>
+				<security:user name="admin" password="hello" authorities="ROLE_ADMIN,ROLE_USER"/>
+				<security:user name="ustb" password="java" authorities="ROLE_USER"/>
+			</security:user-service>
+			-->
+			<!-- 使用数据库判断密码操作功能 -->
+			<security:password-encoder ref="md5"/>
+			<!-- 方式一：使用标准数据库 
+			<security:jdbc-user-service data-source-ref="dataSource"/>
+			-->
+			<!-- 方式二：使用非标准数据库 
+			<security:jdbc-user-service 
+				data-source-ref="dataSource"
+				users-by-username-query="SELECT mid AS username,password,enabled FROM member WHERE mid=?"
+				authorities-by-username-query="SELECT mid AS username,title AS authorities FROM role WHERE mid=?"/>
+			-->
+			<!-- 方式三：利用UserDetailsService接口实现登录 -->
+		</security:authentication-provider>
+	</security:authentication-manager>
+	<!-- 自定义链处理，配置登录成功后的页面，跳转到列表页 -->
+	<bean id="loginSuccess" class="org.springframework.security.web.authentication.SavedRequestAwareAuthenticationSuccessHandler">
+		<property name="defaultTargetUrl" value="/pages/back/message/message_list.action"/>
+	</bean>
+	<!-- 自定义链处理，配置登录失败后的页面，跳转到登录页 -->
+	<bean id="loginFailure" class="org.springframework.security.web.authentication.SimpleUrlAuthenticationFailureHandler">
+		<property name="defaultFailureUrl" value="/login.jsp?error=default"/>
+	</bean>
+	<!-- 定义负责所有操作的链的链接Bean -->
+	<bean id="validateFilter" class="cn.ustb.filter.ValidateLoginFilter">
+		<property name="authenticationSuccessHandler" ref="loginSuccess"/>
+		<property name="authenticationFailureHandler" ref="loginFailure"/>
+		<property name="authenticationManager" ref="authenticationManager"/>
+	</bean>
+</beans>
