@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="cn.ustb.pojo.Item" table="item" catalog="hdb">
+        <id name="iid" type="java.lang.Integer">
+            <column name="iid" />
+            <generator class="native"></generator>
+        </id>
+        <property name="title" type="java.lang.String">
+            <column name="title" length="50" />
+        </property>
+        <!-- MyEclipse默认支持的是一对多关系，cascade="all"表示子表也随着主表发生变化，inverse是指控制反转，此时主表的控制交给了子表，在插入的时候子表会直接插入外键id -->
+        <!-- 正规开发中lazy属性设为true！！！(延迟加载) -->
+        <set name="subitems" cascade="all" inverse="true" lazy="true">
+            <key> <!-- 关联的数据列 -->
+                <column name="iid" />
+            </key> <!-- 一对多所包含的数据类型 -->
+            <one-to-many class="cn.ustb.pojo.Subitem" />
+        </set>
+    </class>
+</hibernate-mapping>
