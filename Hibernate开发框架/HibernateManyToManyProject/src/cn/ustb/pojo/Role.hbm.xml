@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="cn.ustb.pojo.Role" table="role" catalog="hdb">
+        <id name="rid" type="java.lang.Integer">
+            <column name="rid" />
+            <generator class="native"></generator>
+        </id>
+        <property name="title" type="java.lang.String">
+            <column name="title" length="50" not-null="true" />
+        </property>
+        <property name="note" type="java.lang.String">
+            <column name="note" length="65535" />
+        </property>
+        <!-- 表示在Role类中存在一个groups的Set集合 -->
+        <!-- 角色维护的信息与权限组没有关系，所有的操作都是以中间关系表为主 -->
+        <set name="groupses" table="role_groups" catalog="hdb">
+            <key> <!-- role表与role_groups数据表的映射字段 -->
+                <column name="rid" />
+            </key>
+            <!-- 表示配置多对多，因为groups这个Set集合要保存的是多个Groups对象 -->
+            <many-to-many entity-name="cn.ustb.pojo.Groups">
+                <column name="gid" /> <!-- groups与role_groups表的关联字段 -->
+            </many-to-many>
+        </set>
+    </class>
+</hibernate-mapping>

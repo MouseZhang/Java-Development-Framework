@@ -1,0 +1,20 @@
+#MyEclipse Hibernate Properties
+#Wed Feb 12 11:21:31 CST 2020
+reStrategyClass=
+detectM2M=true
+createConfigFile=true
+reSettingsFile=/HibernateManyToManyProject/hibernate.reveng.xml
+profile=
+keyGenerator=native
+genAnnotations=false
+detectO2O=false
+useJavaTypes=true
+sessionFactoryId=
+jndiPath=
+springDaoFile=
+basePersistenceClass=
+configFile=/HibernateManyToManyProject/src/hibernate.cfg.xml
+daoSFId=
+sessionFactoryName=cn.ustb.dbc.HibernateSessionFactory
+genBasicCompId=false
+genVersionTag=false

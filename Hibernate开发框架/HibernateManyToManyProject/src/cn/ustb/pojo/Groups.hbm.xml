@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="cn.ustb.pojo.Groups" table="groups" catalog="hdb">
+        <id name="gid" type="java.lang.Integer">
+            <column name="gid" />
+            <generator class="native"></generator>
+        </id>
+        <property name="title" type="java.lang.String">
+            <column name="title" length="50" />
+        </property>
+        <property name="note" type="java.lang.String">
+            <column name="note" length="65535" />
+        </property>
+        <!-- 由于角色是作为主控方存在，所以权限组的所有相关操作都应该交由角色来完成 -->
+        <!-- Groups类中包含有roles的Set集合，权限组的控制交给角色完成（inverse="true"） -->
+        <!-- 权限组的操作依然要将数据保存在role_groups关系表中 -->
+        <set name="roles" inverse="true" table="role_groups" catalog="hdb">
+            <key> <!-- groups与role_groups表的关联字段 -->
+                <column name="gid" />
+            </key>
+            <!-- Groups中的roles的Set集合保存的是多个Role对象 -->
+            <many-to-many entity-name="cn.ustb.pojo.Role">
+                <column name="rid" /> <!-- 设置role与role_groups表的关联字段 -->
+            </many-to-many>
+        </set>
+    </class>
+</hibernate-mapping>
