@@ -20,4 +20,5 @@
 > - Ajax异步加载数据
 > - RESTful风格URI，通过GET、POST、PUT、DELETE实现数据操作
 
-- [全部代码]([https://github.com/MouseZhang/Java-Development-Framework/tree/master/SSM%E5%BC%80%E5%8F%91%E6%A1%86%E6%9E%B6/SSMProject](https://github.com/MouseZhang/Java-Development-Framework/tree/master/SSM开发框架/SSMProject))
+- [全部代码](https://github.com/MouseZhang/Java-Development-Framework/tree/master/SSM%E5%BC%80%E5%8F%91%E6%A1%86%E6%9E%B6/SSMProject)
+
