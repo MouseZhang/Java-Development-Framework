@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xsi:schemaLocation="http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.3.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+		
+	<!-- Spring MVC配置文件，包括网站跳转的控制逻辑 -->
+	<context:component-scan base-package="cn.ustb" use-default-filters="false">
+		<!-- 只扫描controller注解 -->
+		<context:include-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
+	</context:component-scan>
+	
+	<!-- 配置视图解析器，方便页面返回 -->
+	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="prefix" value="/WEB-INF/views/"/>
+		<property name="suffix" value=".jsp"/>
+	</bean>
+	
+	<!-- 标准配置 -->
+	<!-- 将Spring MVC 不能处理的请求交给Tomcat，实现动态、静态资源都能访问成功 -->
+	<mvc:default-servlet-handler/>
+	
+	<!-- 能支持Spring MVC更高级的一些功能，JSP303校验，快捷的Ajax动态映射请求 -->
+	<mvc:annotation-driven/>
+</beans>

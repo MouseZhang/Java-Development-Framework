@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<!-- 驼峰命名法，设置数据库的键和Java属性之间的转换 -->
+	<settings>
+		<setting name="mapUnderscoreToCamelCase" value="true" />
+	</settings>
+	<!-- 如果没有设置@Alias注解，则此时会被关联到实体类首字母小写这个别名上 -->
+	<typeAliases>
+		<package name="cn.ustb.vo" />
+	</typeAliases>
+	<plugins>
+		<plugin interceptor="com.github.pagehelper.PageInterceptor">
+			<!-- 为分页配置合理化参数 -->
+			<property name="reasonable" value="true" />
+		</plugin>
+	</plugins>
+</configuration>
