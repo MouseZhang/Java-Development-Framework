@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>SpringBoot Web Demo</title>
+</head>
+<body>
+<h1>欢迎光临！</h1><br>
+<!-- 所有的html元素都可以被Thymeleaf接管：th:元素名 -->
+<div th:text="${msg}"></div>
+<div th:utext="${msg}"></div><br>
+<div th:each="user: ${users}" th:text="${user}"></div> <!--建议使用-->
+<div th:each="user: ${users}">[[ ${user} ]]</div> <!--不建议使用-->
+</body>
+</html>
