@@ -1,0 +1,13 @@
+# 服务器端口
+server:
+  port: 8081
+  servlet:
+    context-path: /mouse
+# 关闭模版引擎的缓存
+spring:
+  thymeleaf:
+    cache: false
+  messages:
+    basename: i18n.login # 国际化配置
+  mvc:
+    date-format: yyyy-MM-dd # 时间日期格式化
