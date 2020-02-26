@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:shiro="http://www.thymeleaf.org/thymeleaf-extras-shiro">
+<head>
+    <meta charset="UTF-8">
+    <title>SpringBoot整合Shiro</title>
+    <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet">
+</head>
+<body>
+    <h1>首页</h1>
+    <p th:text="${msg}"></p><br>
+    <!-- 从Shiro Session中判断值 -->
+    <div th:if="${session.loginUser==null}">
+        <a class="btn btn-primary" th:href="@{/toLogin}">点我，登录</a>
+    </div>
+    <div th:if="${session.loginUser!=null}">
+        <a class="btn btn-primary" th:href="@{/logout}">点我，退出</a>
+    </div>
+    <div shiro:hasPermission="user:insert">
+        <a class="btn btn-success" th:href="@{/user/insert}">Insert User</a>
+    </div>
+    <div shiro:hasPermission="user:update">
+        <a class="btn btn-info" th:href="@{/user/update}">Update User</a>
+    </div>
+</body>
+</html>

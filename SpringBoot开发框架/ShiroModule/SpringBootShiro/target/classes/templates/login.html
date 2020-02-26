@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>SpringBoot整合Shiro</title>
+</head>
+<body>
+    <h1>登录页</h1>
+    <p th:text="${msg}" style="color: red"></p>
+    <form th:action="@{/login}" method="post">
+        用户名：<input th:type="text" name="username"><br>
+        密&nbsp;&nbsp;&nbsp;码：<input th:type="password" name="password"><br>
+        <input th:type="submit" th:value="提交">
+        <input th:type="reset" th:value="重置">
+    </form>
+</body>
+</html>
