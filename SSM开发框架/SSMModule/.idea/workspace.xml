@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="e9a174fa-7ff0-4498-984a-3fe19ac767af" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="localRepository" value="$PROJECT_DIR$/../../../maven3libs" />
+        <option name="mavenHome" value="$PROJECT_DIR$/../../../maven/apache-maven-3.5.0" />
+        <option name="userSettingsFile" value="$PROJECT_DIR$/../../../maven/apache-maven-3.5.0/conf/settings.xml" />
+      </MavenGeneralSettings>
+    </option>
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="1YNlFGRjLaw3fNql70SBrxPovKe" />
+  <component name="ProjectViewState">
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="spring" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="e9a174fa-7ff0-4498-984a-3fe19ac767af" name="Default Changelist" comment="" />
+      <created>1582790827962</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1582790827962</updated>
+      <workItem from="1582790829746" duration="6047000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="259" y="33" key="#Project_Structure" timestamp="1582793513474">
+      <screen x="0" y="23" width="1280" height="696" />
+    </state>
+    <state x="259" y="33" key="#Project_Structure/0.23.1280.696@0.23.1280.696" timestamp="1582793513474" />
+    <state x="241" y="38" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1582792639003">
+      <screen x="0" y="23" width="1280" height="696" />
+    </state>
+    <state x="241" y="38" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1280.696@0.23.1280.696" timestamp="1582792639003" />
+    <state x="440" y="91" key="#com.intellij.ide.util.MemberChooser" timestamp="1582795083200">
+      <screen x="0" y="23" width="1280" height="696" />
+    </state>
+    <state x="440" y="91" key="#com.intellij.ide.util.MemberChooser/0.23.1280.696@0.23.1280.696" timestamp="1582795083200" />
+    <state x="243" y="47" key="#com.intellij.ide.util.frameworkSupport.AddFrameworkSupportDialog" timestamp="1582797074321">
+      <screen x="0" y="23" width="1280" height="696" />
+    </state>
+    <state x="243" y="47" key="#com.intellij.ide.util.frameworkSupport.AddFrameworkSupportDialog/0.23.1280.696@0.23.1280.696" timestamp="1582797074321" />
+    <state x="146" y="23" key="SettingsEditor" timestamp="1582797506310">
+      <screen x="0" y="23" width="1280" height="696" />
+    </state>
+    <state x="146" y="23" key="SettingsEditor/0.23.1280.696@0.23.1280.696" timestamp="1582797506310" />
+    <state x="225" y="59" key="spring file set editor" timestamp="1582793604327">
+      <screen x="0" y="23" width="1280" height="696" />
+    </state>
+    <state x="225" y="59" key="spring file set editor/0.23.1280.696@0.23.1280.696" timestamp="1582793604327" />
+  </component>
+</project>
