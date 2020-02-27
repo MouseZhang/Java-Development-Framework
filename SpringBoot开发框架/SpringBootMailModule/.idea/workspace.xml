@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="b57f9264-baec-4fed-8787-9a1e886fbe45" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="localRepository" value="$PROJECT_DIR$/../../../maven3libs" />
+        <option name="mavenHome" value="$PROJECT_DIR$/../../../maven/apache-maven-3.5.0" />
+        <option name="userSettingsFile" value="$PROJECT_DIR$/../../../maven/apache-maven-3.5.0/conf/settings.xml" />
+      </MavenGeneralSettings>
+    </option>
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="1YNUPkZrw6k3llsitTdZVtIzGsm" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources" />
+    <property name="settings.editor.selected.configurable" value="MavenSettings" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/resources" />
+    </key>
+  </component>
+  <component name="RunManager" selected="JUnit.MailApplicationTests.mimeMail">
+    <configuration name="MailApplicationTests.contextLoads" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="SpringBootMailModule" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="cn.ustb.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="cn.ustb" />
+      <option name="MAIN_CLASS_NAME" value="cn.ustb.MailApplicationTests" />
+      <option name="METHOD_NAME" value="contextLoads" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MailApplicationTests.mimeMail" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="SpringBootMailModule" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="cn.ustb.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="cn.ustb" />
+      <option name="MAIN_CLASS_NAME" value="cn.ustb.MailApplicationTests" />
+      <option name="METHOD_NAME" value="mimeMail" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MailApplicationTests.simpleMail" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="SpringBootMailModule" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="cn.ustb.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="cn.ustb" />
+      <option name="MAIN_CLASS_NAME" value="cn.ustb.MailApplicationTests" />
+      <option name="METHOD_NAME" value="simpleMail" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MailApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="SpringBootMailModule" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="cn.ustb.MailApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.MailApplicationTests.mimeMail" />
+        <item itemvalue="JUnit.MailApplicationTests.simpleMail" />
+        <item itemvalue="JUnit.MailApplicationTests.contextLoads" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="b57f9264-baec-4fed-8787-9a1e886fbe45" name="Default Changelist" comment="" />
+      <created>1582782523339</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1582782523339</updated>
+      <workItem from="1582782526062" duration="2383000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state width="1199" height="186" key="GridCell.Tab.0.bottom" timestamp="1582785222264">
+      <screen x="0" y="23" width="1280" height="696" />
+    </state>
+    <state width="1199" height="186" key="GridCell.Tab.0.bottom/0.23.1280.696@0.23.1280.696" timestamp="1582785222264" />
+    <state width="1199" height="186" key="GridCell.Tab.0.center" timestamp="1582785222263">
+      <screen x="0" y="23" width="1280" height="696" />
+    </state>
+    <state width="1199" height="186" key="GridCell.Tab.0.center/0.23.1280.696@0.23.1280.696" timestamp="1582785222263" />
+    <state width="1199" height="186" key="GridCell.Tab.0.left" timestamp="1582785222262">
+      <screen x="0" y="23" width="1280" height="696" />
+    </state>
+    <state width="1199" height="186" key="GridCell.Tab.0.left/0.23.1280.696@0.23.1280.696" timestamp="1582785222262" />
+    <state width="1199" height="186" key="GridCell.Tab.0.right" timestamp="1582785222263">
+      <screen x="0" y="23" width="1280" height="696" />
+    </state>
+    <state width="1199" height="186" key="GridCell.Tab.0.right/0.23.1280.696@0.23.1280.696" timestamp="1582785222263" />
+  </component>
+</project>
