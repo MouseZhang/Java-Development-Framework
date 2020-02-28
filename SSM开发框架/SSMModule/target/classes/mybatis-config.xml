@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <!-- 配置数据源，交给Spring去做 -->
+    <typeAliases>
+        <package name="cn.ustb.pojo"/>
+    </typeAliases>
+    <mappers>
+        <mapper class="cn.ustb.dao.BooksMapper"/>
+    </mappers>
+</configuration>
