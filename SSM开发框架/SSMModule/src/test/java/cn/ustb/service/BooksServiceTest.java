@@ -13,7 +13,6 @@ public class BooksServiceTest {
     @Autowired
     BooksService booksService;
 
-
     @Test
     public void get() {
         System.out.println(booksService.get(1));
@@ -23,4 +22,5 @@ public class BooksServiceTest {
     public void list() {
         System.out.println(booksService.list());
     }
+    
 }
