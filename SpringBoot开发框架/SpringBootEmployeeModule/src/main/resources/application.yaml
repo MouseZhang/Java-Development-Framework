@@ -1,0 +1,40 @@
+server:
+  servlet:
+    context-path: /mouse # 服务器上下文
+spring:
+  thymeleaf:
+    cache: false # 关闭模版引擎的缓存
+  messages:
+    basename: i18n.login # 国际化配置
+  mvc:
+    date-format: yyyy-MM-dd # 时间日期格式化
+  datasource:
+    username: root
+    password: root123
+    url: jdbc:mysql://localhost:3306/springboot?serverTimezone=GMT%2B8&useUnicode=true&characterEncoding=utf-8
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource # 指定Druid数据源
+    #Spring Boot 默认是不注入这些属性值的，需要自己绑定
+    #Druid 数据源专有配置
+    initialSize: 5
+    minIdle: 5
+    maxActive: 20
+    maxWait: 60000
+    timeBetweenEvictionRunsMillis: 60000
+    minEvictableIdleTimeMillis: 300000
+    validationQuery: SELECT 1 FROM DUAL
+    testWhileIdle: true
+    testOnBorrow: false
+    testOnReturn: false
+    poolPreparedStatements: true
+    #配置监控统计拦截的filters，stat:监控统计、log4j：日志记录、wall：防御sql注入
+    #如果允许时报错  java.lang.ClassNotFoundException: org.apache.log4j.Priority
+    #则导入 log4j 依赖即可
+    filters: stat,wall,log4j
+    maxPoolPreparedStatementPerConnectionSize: 20
+    useGlobalDataSourceStat: true
+    connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=500
+# 整合mybatis
+mybatis:
+  type-aliases-package: cn.ustb.pojo
+  mapper-locations: classpath:mybatis/mapper/*.xml

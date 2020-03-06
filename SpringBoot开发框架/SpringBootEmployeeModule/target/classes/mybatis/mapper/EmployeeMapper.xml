@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.ustb.dao.EmployeeMapper">
+    <select id="findAll" resultMap="EmployeeDepartment">
+        SELECT e.empno,e.ename,e.email,e.gender,e.birth,e.deptno,d.deptno,d.dname FROM employee e LEFT JOIN department d
+        ON e.deptno = d.deptno
+    </select>
+    <select id="findById" resultMap="EmployeeDepartment">
+        SELECT e.empno,e.ename,e.email,e.gender,e.birth,e.deptno,d.deptno,d.dname FROM employee e LEFT JOIN department d
+        ON e.deptno = d.deptno WHERE e.empno=#{id}
+    </select>
+    <insert id="doCreate" parameterType="Employee" useGeneratedKeys="true" keyProperty="empno">
+        INSERT INTO employee (ename,email,gender,birth,deptno) VALUES (#{ename},#{email},#{gender},#{birth},#{dept.deptno})
+    </insert>
+    <update id="doUpdate" parameterType="Employee">
+        UPDATE employee SET ename=#{ename},email=#{email},gender=#{gender},birth=#{birth},deptno=#{dept.deptno} WHERE empno=#{empno}
+    </update>
+    <delete id="doRemove" parameterType="int">
+        DELETE FROM employee WHERE empno=#{id}
+    </delete>
+<resultMap id="EmployeeDepartment" type="Employee">
+    <id property="empno" column="empno"/>
+    <result property="ename" column="ename"/>
+    <result property="email" column="email"/>
+    <result property="gender" column="gender"/>
+    <result property="birth" column="birth"/>
+    <association property="dept" javaType="Department">
+        <id property="deptno" column="deptno"/>
+        <result property="dname" column="dname"/>
+    </association>
+</resultMap>
+</mapper>
