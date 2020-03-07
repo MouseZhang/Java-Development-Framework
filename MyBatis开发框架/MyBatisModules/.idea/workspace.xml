@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="9f77b955-ec0d-4c1c-8296-97e493d5fab1" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="localRepository" value="$PROJECT_DIR$/../../../maven3libs" />
+        <option name="mavenHome" value="$PROJECT_DIR$/../../../maven/apache-maven-3.5.0" />
+        <option name="userSettingsFile" value="$PROJECT_DIR$/../../../maven/apache-maven-3.5.0/conf/settings.xml" />
+      </MavenGeneralSettings>
+    </option>
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="1YlBggVnwYK8jp2qcrdMnw8q7R6" />
+  <component name="ProjectViewState">
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/mybatis-04/src/main/java/cn/ustb" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.3402299" />
+    <property name="settings.editor.selected.configurable" value="MavenSettings" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="cn.ustb.dao" />
+      <recent name="cn.ustb.pojo" />
+      <recent name="cn.ustb.utils" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/mybatis-04/src/main/java/cn/ustb" />
+      <recent name="$PROJECT_DIR$/mybatis-04/src/main/resources" />
+      <recent name="$PROJECT_DIR$/mybatis-03/src/main/java/cn/ustb" />
+      <recent name="$PROJECT_DIR$/mybatis-03/src/main/resources" />
+      <recent name="$PROJECT_DIR$/mybatis-02/src/main/java/cn/ustb/dao" />
+    </key>
+  </component>
+  <component name="RunManager" selected="JUnit.UserMapperTest.testLog4j">
+    <configuration name="UserDaoTest.testGetUsers (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="mybatis-03" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="cn.ustb.dao.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="cn.ustb.dao" />
+      <option name="MAIN_CLASS_NAME" value="cn.ustb.dao.UserDaoTest" />
+      <option name="METHOD_NAME" value="testGetUsers" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserDaoTest.testGetUsers" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="mybatis-02" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="cn.ustb.dao.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="cn.ustb.dao" />
+      <option name="MAIN_CLASS_NAME" value="cn.ustb.dao.UserDaoTest" />
+      <option name="METHOD_NAME" value="testGetUsers" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserMapperTest.testGetUserById (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="mybatis-04" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="cn.ustb.dao.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="cn.ustb.dao" />
+      <option name="MAIN_CLASS_NAME" value="cn.ustb.dao.UserMapperTest" />
+      <option name="METHOD_NAME" value="testGetUserById" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserMapperTest.testGetUserById" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="mybatis-03" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="cn.ustb.dao.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="cn.ustb.dao" />
+      <option name="MAIN_CLASS_NAME" value="cn.ustb.dao.UserMapperTest" />
+      <option name="METHOD_NAME" value="testGetUserById" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserMapperTest.testLog4j" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="mybatis-04" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="cn.ustb.dao.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="cn.ustb.dao" />
+      <option name="MAIN_CLASS_NAME" value="cn.ustb.dao.UserMapperTest" />
+      <option name="METHOD_NAME" value="testLog4j" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.UserMapperTest.testLog4j" />
+        <item itemvalue="JUnit.UserMapperTest.testGetUserById (1)" />
+        <item itemvalue="JUnit.UserMapperTest.testGetUserById" />
+        <item itemvalue="JUnit.UserDaoTest.testGetUsers (1)" />
+        <item itemvalue="JUnit.UserDaoTest.testGetUsers" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="9f77b955-ec0d-4c1c-8296-97e493d5fab1" name="Default Changelist" comment="" />
+      <created>1583507412323</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1583507412323</updated>
+      <workItem from="1583507414944" duration="10953000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="237" y="33" key="#Project_Structure" timestamp="1583562424206">
+      <screen x="0" y="23" width="1280" height="696" />
+    </state>
+    <state x="237" y="33" key="#Project_Structure/0.23.1280.696@0.23.1280.696" timestamp="1583562424206" />
+    <state x="258" y="23" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1583549223743">
+      <screen x="0" y="23" width="1280" height="696" />
+    </state>
+    <state x="258" y="23" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.23.1280.696@0.23.1280.696" timestamp="1583549223743" />
+    <state width="1199" height="192" key="GridCell.Tab.0.bottom" timestamp="1583565009381">
+      <screen x="0" y="23" width="1280" height="696" />
+    </state>
+    <state width="1199" height="192" key="GridCell.Tab.0.bottom/0.23.1280.696@0.23.1280.696" timestamp="1583565009381" />
+    <state width="1199" height="192" key="GridCell.Tab.0.center" timestamp="1583565009380">
+      <screen x="0" y="23" width="1280" height="696" />
+    </state>
+    <state width="1199" height="192" key="GridCell.Tab.0.center/0.23.1280.696@0.23.1280.696" timestamp="1583565009380" />
+    <state width="1199" height="192" key="GridCell.Tab.0.left" timestamp="1583565009379">
+      <screen x="0" y="23" width="1280" height="696" />
+    </state>
+    <state width="1199" height="192" key="GridCell.Tab.0.left/0.23.1280.696@0.23.1280.696" timestamp="1583565009379" />
+    <state width="1199" height="192" key="GridCell.Tab.0.right" timestamp="1583565009380">
+      <screen x="0" y="23" width="1280" height="696" />
+    </state>
+    <state width="1199" height="192" key="GridCell.Tab.0.right/0.23.1280.696@0.23.1280.696" timestamp="1583565009380" />
+    <state x="146" y="23" key="SettingsEditor" timestamp="1583551443290">
+      <screen x="0" y="23" width="1280" height="696" />
+    </state>
+    <state x="146" y="23" key="SettingsEditor/0.23.1280.696@0.23.1280.696" timestamp="1583551443290" />
+    <state x="31" y="65" key="new project wizard" timestamp="1583562384379">
+      <screen x="0" y="23" width="1280" height="696" />
+    </state>
+    <state x="31" y="65" key="new project wizard/0.23.1280.696@0.23.1280.696" timestamp="1583562384379" />
+    <state x="302" y="43" key="search.everywhere.popup" timestamp="1583507612756">
+      <screen x="0" y="23" width="1280" height="696" />
+    </state>
+    <state x="302" y="43" key="search.everywhere.popup/0.23.1280.696@0.23.1280.696" timestamp="1583507612756" />
+  </component>
+</project>

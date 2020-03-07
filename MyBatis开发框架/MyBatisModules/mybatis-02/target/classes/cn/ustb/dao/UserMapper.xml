@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- namespace用来绑定一个对应的Dao/Mapper接口 -->
+<mapper namespace="cn.ustb.dao.UserMapper">
+    <select id="getUsers" resultType="user">
+        SELECT * FROM user;
+  </select>
+    <select id="getUserById" parameterType="int" resultType="user">
+        SELECT * FROM user WHERE id=#{id};
+  </select>
+    <insert id="addUser" keyProperty="id" useGeneratedKeys="true" parameterType="user">
+        INSERT INTO user (name,pwd) VALUES (#{name},#{pwd})
+    </insert>
+    <update id="updateUser" parameterType="user">
+        UPDATE user SET name=#{name},pwd=#{pwd} WHERE id=#{id}
+    </update>
+    <delete id="deleteUser" parameterType="int">
+        DELETE FROM user WHERE id=#{id}
+    </delete>
+</mapper>
