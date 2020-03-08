@@ -14,6 +14,10 @@
         <module>mybatis-02</module>
         <module>mybatis-03</module>
         <module>mybatis-04</module>
+        <module>mybatis-05</module>
+        <module>mybatis-06</module>
+        <module>mybatis-07</module>
+        <module>mybatis-08</module>
     </modules>
 
     <!-- 导入依赖 -->
@@ -35,7 +39,6 @@
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
             <version>4.12</version>
-            <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>org.projectlombok</groupId>

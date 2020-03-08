@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.ustb.dao.StudentMapper">
+    <!-- 复杂的属性单独处理
+         对象使用：association
+         集合使用：collecion
+         方式一：按照查询嵌套处理（类似子查询）
+    -->
+    <select id="getStudents" resultMap="stuTeacherMap">
+        SELECT * FROM student
+    </select>
+    <resultMap id="stuTeacherMap" type="student">
+        <id property="sid" column="sid"/>
+        <result property="name" column="name"/>
+        <association property="teacher" column="tid" javaType="teacher" select="getTeacherById" />
+    </resultMap>
+    <select id="getTeacherById" resultType="teacher">
+        SELECT * FROM teacher WHERE tid=#{tid}
+    </select>
+    <!-- 复杂的属性单独处理
+         对象使用：association
+         集合使用：collecion
+         方式二：按照结果嵌套处理（类似联表查询）
+    -->
+    <select id="getStudentsTeach" resultMap="stuTeachMap">
+        SELECT s.sid sid,s.name sname,s.tid tid,t.name tname FROM student s, teacher t WHERE s.tid=t.tid
+    </select>
+    <resultMap id="stuTeachMap" type="student">
+        <id property="sid" column="sid"/>
+        <result property="name" column="sname"/>
+        <association property="teacher" javaType="Teacher">
+            <id property="tid" column="tid"/>
+            <result property="name" column="tname"/>
+        </association>
+    </resultMap>
+
+</mapper>

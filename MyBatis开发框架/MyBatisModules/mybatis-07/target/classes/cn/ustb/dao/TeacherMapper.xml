@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.ustb.dao.TeacherMapper">
+    <select id="getTeachers" resultType="teacher">
+        SELECT * FROM teacher
+    </select>
+    <!-- 按照结果嵌套 -->
+    <select id="getTeacherById" resultMap="teachStuMap">
+        SELECT s.sid sid,s.name sname,t.name tname,t.tid tid
+        FROM student s,teacher t WHERE s.tid=t.tid AND t.tid=#{tid}
+    </select>
+    <resultMap id="teachStuMap" type="teacher">
+        <id property="tid" column="tid"/>
+        <result property="name" column="tname"/>
+        <!-- 老师有很多学生（集合的关系）
+             association：对象
+             collection：集合
+             javaType：指定属性的类型
+             ofType：指定集合的泛型
+        -->
+        <collection property="students" ofType="student">
+            <id property="sid" column="sid"/>
+            <result property="name" column="sname"/>
+            <result property="tid" column="tid"/>
+        </collection>
+    </resultMap>
+    <!-- 按照查询嵌套 -->
+    <select id="getTeacherStuById" resultMap="teachStudentMap">
+        SELECT * FROM teacher WHERE tid=#{tid}
+    </select>
+    <resultMap id="teachStudentMap" type="teacher">
+        <id property="tid" column="tid"/>
+        <result property="name" column="name"/>
+        <collection property="students" javaType="ArrayList" ofType="student" select="getStudentByTid" column="tid"/>
+    </resultMap>
+    <select id="getStudentByTid" resultType="student">
+        SELECT * FROM student WHERE tid=#{tid}
+    </select>
+</mapper>

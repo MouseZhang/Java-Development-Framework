@@ -10,6 +10,12 @@
     <select id="getUserById" parameterType="int" resultMap="userMap">
         SELECT * FROM user WHERE id=#{id};
   </select>
+    <select id="getUsersSplit" parameterType="map" resultMap="userMap">
+        SELECT * FROM user LIMIT #{map.startIndex},#{map.pageSize}
+    </select>
+    <select id="getUsersRowBounds" resultMap="userMap">
+        SELECT * FROM user
+    </select>
     <!-- 结果集映射 -->
     <resultMap id="userMap" type="User">
         <!-- <id property="id" column="id"/> -->
