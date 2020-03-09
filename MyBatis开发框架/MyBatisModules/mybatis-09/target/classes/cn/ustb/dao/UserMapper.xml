@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.ustb.dao.UserMapper">
+    <!--
+        二级缓存，又称全局缓存，作用于namespace级别
+        不同的Mapper查询的数据会放在自己对应的缓存(Map)中
+    -->
+    <!-- 在当前Mapper.xml使用二级缓存 -->
+    <!--
+    <cache
+        eviction="FIFO"
+        flushInterval="60000"
+        size="512"
+        readOnly="true"/>
+    -->
+    <!-- 自定义缓存 -->
+    <cache type="org.mybatis.caches.ehcache.EhcacheCache"/>
+    <select id="getUserById" parameterType="int" resultType="user">
+        SELECT * FROM user WHERE id=#{id}
+    </select>
+    <update id="updateUser" parameterType="user">
+        UPDATE user SET name=#{name},pwd=#{pwd} WHERE id=#{id}
+    </update>
+</mapper>

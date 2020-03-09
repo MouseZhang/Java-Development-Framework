@@ -6,4 +6,69 @@
     <insert id="addBlog" parameterType="blog">
         INSERT INTO blog (id,title,author,createTime,views) VALUES (#{id},#{title},#{author},#{createTime},#{views})
     </insert>
+    <!--
+    <select id="queryBlog" parameterType="map" resultType="blog">
+        SELECT * FROM blog WHERE 1=1
+        <if test="title != null">
+            AND title=#{title}
+        </if>
+        <if test="author != null">
+            AND author=#{author}
+        </if>
+    </select>
+    -->
+    <sql id="if-title-author">
+        <if test="title != null">
+            title=#{title}
+        </if>
+        <if test="author != null">
+            AND author=#{author}
+        </if>
+    </sql>
+    <select id="queryBlog" parameterType="map" resultType="blog">
+        SELECT * FROM blog
+        <where>
+            <include refid="if-title-author"/>
+        </where>
+    </select>
+    <select id="queryBlogChoose" parameterType="map" resultType="blog">
+        SELECT * FROM blog
+        <where>
+            <choose>
+                <when test="title != null">
+                    title=#{title}
+                </when>
+                <when test="author != null">
+                    AND author=#{author}
+                </when>
+                <otherwise>
+                    AND views=#{views}
+                </otherwise>
+            </choose>
+        </where>
+    </select>
+    <update id="updateBlog" parameterType="map">
+        UPDATE blog
+        <set>
+            <if test="title != null">
+                title=#{title},
+            </if>
+            <if test="views != null">
+                views=#{views}
+            </if>
+        </set>
+        WHERE id=#{id}
+    </update>
+    <!--
+        SELECT * FROM blog WHERE 1=1 AND (views = 9999 OR views = 8888)
+        现在传递一个万能的map，这个map中包含有一个集合
+    -->
+    <select id="queryBlogForeach" parameterType="map" resultType="blog">
+        SELECT * FROM blog
+        <where>
+            <foreach collection="ids" item="views" open="AND (" separator="OR" close=")">
+                views=#{views}
+            </foreach>
+        </where>
+    </select>
 </mapper>

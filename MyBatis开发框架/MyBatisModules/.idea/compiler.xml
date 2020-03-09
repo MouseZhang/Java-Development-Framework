@@ -6,6 +6,7 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="mybatis-09" />
         <module name="mybatis-08" />
         <module name="mybatis-07" />
         <module name="mybatis-06" />
