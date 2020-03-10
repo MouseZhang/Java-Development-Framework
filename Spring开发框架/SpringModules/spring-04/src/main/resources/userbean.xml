@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:c="http://www.springframework.org/schema/c"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- p命名空间注入，可以直接注入属性的值 properties -->
+    <bean id="user" class="cn.ustb.pojo.User" p:name="SMITH" p:age="20"/>
+
+    <!-- c命名空间注入，通过构造器注入 construct-args -->
+    <!-- 显示得设置为单例，默认单例 -->
+    <!-- 原型模式：prototype，会创建多个对象 -->
+    <bean id="userc" class="cn.ustb.pojo.User" c:name="ALLEN" c:age="18" scope="singleton"/>
+</beans>

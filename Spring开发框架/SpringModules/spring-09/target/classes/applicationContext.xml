@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/aop
+        https://www.springframework.org/schema/aop/spring-aop.xsd">
+
+    <!-- 注册bean -->
+    <bean id="userService" class="cn.ustb.service.UserServiceImpl"/>
+    <bean id="beforeLog" class="cn.ustb.log.BeforeLog"/>
+    <bean id="afterLog" class="cn.ustb.log.AfterLog"/>
+    <!-- 方式一：使用原生Spring API接口 -->
+    <!-- 配置aop -->
+
+
+    <!-- 方式三：使用注解 -->
+    <bean id="annotationPointCut" class="cn.ustb.diy.AnnotationPointCut"/>
+    <!-- 开启注解支持 -->
+    <aop:aspectj-autoproxy/>
+</beans>

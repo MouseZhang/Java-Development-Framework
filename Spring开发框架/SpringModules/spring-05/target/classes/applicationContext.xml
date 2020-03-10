@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       https://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context
+       https://www.springframework.org/schema/context/spring-context.xsd
+       http://www.springframework.org/schema/aop
+       https://www.springframework.org/schema/aop/spring-aop.xsd">
+
+    <!--
+        方式一：
+        byName：会自动在容器上下文中查找，和自己对象setter方法后面的值对应的bean id
+        方式二：
+        byType：会自动在容器上下文中查找，和自己对象属性类型相同的bean
+        <bean id="person" class="cn.ustb.pojo.Person" autowire="byName">
+            <property name="name" value="SMITH"/>
+        </bean>
+    -->
+    <!-- 开启注解支持 -->
+    <context:annotation-config/>
+    <bean id="dog" class="cn.ustb.pojo.Dog"/>
+    <bean id="cat" class="cn.ustb.pojo.Cat"/>
+    <bean id="person" class="cn.ustb.pojo.Person"/>
+    <!--
+        @Nullable：标记字段后，可以为null
+        @Autowired(required = false)，显示定义为false后，说明这个属性可以为null
+    -->
+
+</beans>

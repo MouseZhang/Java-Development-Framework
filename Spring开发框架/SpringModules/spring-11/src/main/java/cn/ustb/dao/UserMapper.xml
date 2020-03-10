@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.ustb.dao.UserMapper">
+    <select id="getUsers" resultType="user">
+        SELECT * FROM user
+    </select>
+    <insert id="addUser" parameterType="user" keyProperty="id" useGeneratedKeys="true">
+        INSERT INTO user (name, pwd) VALUES (#{name},#{pwd})
+    </insert>
+    <delete id="deleteUser" parameterType="int">
+        DELETE FROM user WHERE id=#{id}
+    </delete>
+</mapper>
+
+

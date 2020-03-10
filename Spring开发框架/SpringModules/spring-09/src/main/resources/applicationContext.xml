@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/aop
+        https://www.springframework.org/schema/aop/spring-aop.xsd">
+
+    <!-- 注册bean -->
+    <bean id="userService" class="cn.ustb.service.UserServiceImpl"/>
+    <bean id="beforeLog" class="cn.ustb.log.BeforeLog"/>
+    <bean id="afterLog" class="cn.ustb.log.AfterLog"/>
+    <!-- 方式一：使用原生Spring API接口 -->
+    <!-- 配置aop -->
+    <aop:config>
+        <!-- 切入点（在哪里执行Spring的方法）
+            execution(要执行的位置：修饰符 返回值 类名 方法名 参数)
+        -->
+        <aop:pointcut id="pointcut" expression="execution(* cn.ustb.service.UserServiceImpl.*(..))"/>
+        <!-- 执行环绕增强 -->
+        <aop:advisor advice-ref="beforeLog" pointcut-ref="pointcut"/>
+        <aop:advisor advice-ref="afterLog" pointcut-ref="pointcut"/>
+    </aop:config>
+
+    <!-- 方式二：使用自定义类（开发中推荐使用） -->
+    <bean id="diy" class="cn.ustb.diy.DiyPointCut"/>
+    <aop:config>
+        <!-- 自定义切面（类），ref要引用的类 -->
+        <aop:aspect ref="diy">
+            <!-- 切入点 -->
+            <aop:pointcut id="pointcut" expression="execution(* cn.ustb.service.UserServiceImpl.*(..))"/>
+            <!-- 通知（方法）-->
+            <aop:before method="before" pointcut-ref="pointcut"/>
+            <aop:after method="after" pointcut-ref="pointcut"/>
+        </aop:aspect>
+    </aop:config>
+
+    <!-- 方式三：使用注解 -->
+    <bean id="annotationPointCut" class="cn.ustb.diy.AnnotationPointCut"/>
+    <!-- 开启注解支持 -->
+    <aop:aspectj-autoproxy/>
+</beans>

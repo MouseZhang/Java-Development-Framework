@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- 无参构造 -->
+    <!-- <bean id="user" class="cn.ustb.pojo.User">-->
+    <!-- <property name="name" value="SMITH"/>-->
+    <!-- </bean>-->
+    <!-- 利用构造器赋值 -->
+    <!-- 方式一：利用下标赋值
+    <bean id="user" class="cn.ustb.pojo.User">
+        <constructor-arg index="0" value="SMITH"/>
+    </bean>
+    -->
+    <!-- 方式二：利用类型赋值（不推荐）
+    <bean id="user" class="cn.ustb.pojo.User">
+        <constructor-arg type="java.lang.String" value="SMITH"/>
+    </bean>
+    -->
+    <!-- 方式三：直接通过参数名赋值 -->
+    <!--
+        id：bean的唯一标识符，相当于对象名
+        class：bean对象所对应的全限类名，包+类名
+        name：也是别名，name可以同时取多个别名
+    -->
+    <bean id="user" class="cn.ustb.pojo.User" name="u1,u2">
+        <constructor-arg name="name" value="SMITH"/>
+    </bean>
+    <!-- 别名 -->
+    <alias name="user" alias="u"/>
+    <!-- 多用于团队开发上，将多个*.xml合并为总的beans.xml -->
+    <import resource="beans1.xml"/>
+    <import resource="beans2.xml"/>
+</beans>
