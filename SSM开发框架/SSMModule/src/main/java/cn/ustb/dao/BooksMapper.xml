@@ -3,20 +3,20 @@
         PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="cn.ustb.dao.BooksMapper">
-    <insert id="doCreate" parameterType="Books">
+    <insert id="addBook" parameterType="Books">
         INSERT INTO books(bookName,bookCounts,details) VALUES (#{bookName},#{bookCounts},#{details})
     </insert>
-    <update id="doUpdate" parameterType="Books">
+    <update id="updateBook" parameterType="Books">
         UPDATE books SET bookName=#{bookName},bookCounts=#{bookCounts},details=#{details}
         WHERE bookID=#{bookID}
     </update>
-    <delete id="doRemove" parameterType="int">
-        DELETE FROM books WHERE bookID=#{bookID}
+    <delete id="deleteBook" parameterType="int">
+        DELETE FROM books WHERE bookID=#{id}
     </delete>
-    <select id="findById" parameterType="int" resultType="Books">
-        SELECT * FROM books WHERE bookID=#{bookID}
+    <select id="getBookById" parameterType="int" resultType="Books">
+        SELECT * FROM books WHERE bookID=#{id}
     </select>
-    <select id="findAll" resultType="Books">
+    <select id="getAllBooks" resultType="Books">
         SELECT * FROM books
     </select>
 </mapper>

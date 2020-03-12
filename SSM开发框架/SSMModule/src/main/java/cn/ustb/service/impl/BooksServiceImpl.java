@@ -11,28 +11,31 @@ import java.util.List;
 @Service
 public class BooksServiceImpl implements BooksService {
 
-    @Autowired
     private BooksMapper booksMapper;
 
-
-    public boolean insert(Books vo) {
-        return booksMapper.doCreate(vo);
+    @Autowired
+    public void setBooksMapper(BooksMapper booksMapper) {
+        this.booksMapper = booksMapper;
     }
 
-    public boolean update(Books vo) {
-        return booksMapper.doUpdate(vo);
+    public boolean addBook(Books vo) {
+        return booksMapper.addBook(vo);
     }
 
-    public boolean delete(int id) {
-        return booksMapper.doRemove(id);
+    public boolean updateBook(Books vo) {
+        return booksMapper.updateBook(vo);
     }
 
-    public Books get(int id) {
-        return booksMapper.findById(id);
+    public boolean deleteBook(Integer id) {
+        return booksMapper.deleteBook(id);
     }
 
-    public List<Books> list() {
-        return booksMapper.findAll();
+    public Books getBookById(Integer id) {
+        return booksMapper.getBookById(id);
+    }
+
+    public List<Books> getAllBooks() {
+        return booksMapper.getAllBooks();
     }
 
 }

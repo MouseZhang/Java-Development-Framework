@@ -7,14 +7,14 @@ import java.util.List;
 
 public interface BooksMapper {
 
-    public boolean doCreate(Books vo);
+    public boolean addBook(Books vo);
 
-    public boolean doUpdate(Books vo);
+    public boolean updateBook(Books vo);
 
-    public boolean doRemove(@Param("bookID") Integer id);
+    public boolean deleteBook(@Param("id") Integer id);
 
-    public Books findById(@Param("bookID") Integer id);
+    public Books getBookById(@Param("id") Integer id);
 
-    public List<Books> findAll();
+    public List<Books> getAllBooks();
 
 }

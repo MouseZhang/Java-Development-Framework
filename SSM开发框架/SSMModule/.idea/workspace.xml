@@ -55,7 +55,7 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="Arquillian JUnit4" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.Arquillian JUnit4" value="" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="spring" />
@@ -69,7 +69,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.BooksServiceTest">
+  <component name="RunManager" selected="JUnit.BooksServiceTest.test">
     <configuration name="BooksMapperTest.doCreate" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="SSMModule" />
       <extension name="coverage">
@@ -101,8 +101,25 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="BooksServiceTest.test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="SSMModule" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="cn.ustb.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="cn.ustb.service" />
+      <option name="MAIN_CLASS_NAME" value="cn.ustb.service.BooksServiceTest" />
+      <option name="METHOD_NAME" value="test" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.BooksServiceTest.test" />
         <item itemvalue="JUnit.BooksServiceTest" />
         <item itemvalue="JUnit.BooksMapperTest.doCreate" />
       </list>
@@ -121,6 +138,11 @@
       <workItem from="1582790829746" duration="6047000" />
       <workItem from="1582798248348" duration="412000" />
       <workItem from="1582903893313" duration="1866000" />
+      <workItem from="1582946563231" duration="335000" />
+      <workItem from="1582947284216" duration="29000" />
+      <workItem from="1583851097280" duration="501000" />
+      <workItem from="1583981148574" duration="2188000" />
+      <workItem from="1583983459110" duration="36000" />
     </task>
     <servers />
   </component>
@@ -137,38 +159,43 @@
       <screen x="0" y="23" width="1280" height="696" />
     </state>
     <state x="241" y="38" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1280.696@0.23.1280.696" timestamp="1582792639003" />
-    <state x="440" y="91" key="#com.intellij.ide.util.MemberChooser" timestamp="1582795083200">
+    <state x="440" y="91" key="#com.intellij.ide.util.MemberChooser" timestamp="1583982126272">
       <screen x="0" y="23" width="1280" height="696" />
     </state>
-    <state x="440" y="91" key="#com.intellij.ide.util.MemberChooser/0.23.1280.696@0.23.1280.696" timestamp="1582795083200" />
+    <state x="440" y="91" key="#com.intellij.ide.util.MemberChooser/0.23.1280.696@0.23.1280.696" timestamp="1583982126272" />
     <state x="243" y="47" key="#com.intellij.ide.util.frameworkSupport.AddFrameworkSupportDialog" timestamp="1582797074321">
       <screen x="0" y="23" width="1280" height="696" />
     </state>
     <state x="243" y="47" key="#com.intellij.ide.util.frameworkSupport.AddFrameworkSupportDialog/0.23.1280.696@0.23.1280.696" timestamp="1582797074321" />
-    <state width="1123" height="140" key="GridCell.Tab.0.bottom" timestamp="1582905862716">
-      <screen x="0" y="23" width="1280" height="696" />
+    <state width="1238" height="151" key="GridCell.Tab.0.bottom" timestamp="1583851599749">
+      <screen x="0" y="0" width="1280" height="800" />
     </state>
-    <state width="1123" height="140" key="GridCell.Tab.0.bottom/0.23.1280.696@0.23.1280.696" timestamp="1582905862716" />
-    <state width="1123" height="140" key="GridCell.Tab.0.center" timestamp="1582905862715">
-      <screen x="0" y="23" width="1280" height="696" />
+    <state width="1238" height="151" key="GridCell.Tab.0.bottom/0.0.1280.800@0.0.1280.800" timestamp="1583851599749" />
+    <state width="1123" height="144" key="GridCell.Tab.0.bottom/0.23.1280.696@0.23.1280.696" timestamp="1582946901557" />
+    <state width="1238" height="151" key="GridCell.Tab.0.center" timestamp="1583851599747">
+      <screen x="0" y="0" width="1280" height="800" />
     </state>
-    <state width="1123" height="140" key="GridCell.Tab.0.center/0.23.1280.696@0.23.1280.696" timestamp="1582905862715" />
-    <state width="1123" height="140" key="GridCell.Tab.0.left" timestamp="1582905862715">
-      <screen x="0" y="23" width="1280" height="696" />
+    <state width="1238" height="151" key="GridCell.Tab.0.center/0.0.1280.800@0.0.1280.800" timestamp="1583851599747" />
+    <state width="1123" height="144" key="GridCell.Tab.0.center/0.23.1280.696@0.23.1280.696" timestamp="1582946901556" />
+    <state width="1238" height="151" key="GridCell.Tab.0.left" timestamp="1583851599747">
+      <screen x="0" y="0" width="1280" height="800" />
     </state>
-    <state width="1123" height="140" key="GridCell.Tab.0.left/0.23.1280.696@0.23.1280.696" timestamp="1582905862715" />
-    <state width="1123" height="140" key="GridCell.Tab.0.right" timestamp="1582905862716">
-      <screen x="0" y="23" width="1280" height="696" />
+    <state width="1238" height="151" key="GridCell.Tab.0.left/0.0.1280.800@0.0.1280.800" timestamp="1583851599747" />
+    <state width="1123" height="144" key="GridCell.Tab.0.left/0.23.1280.696@0.23.1280.696" timestamp="1582946901555" />
+    <state width="1238" height="151" key="GridCell.Tab.0.right" timestamp="1583851599748">
+      <screen x="0" y="0" width="1280" height="800" />
     </state>
-    <state width="1123" height="140" key="GridCell.Tab.0.right/0.23.1280.696@0.23.1280.696" timestamp="1582905862716" />
+    <state width="1238" height="151" key="GridCell.Tab.0.right/0.0.1280.800@0.0.1280.800" timestamp="1583851599748" />
+    <state width="1123" height="144" key="GridCell.Tab.0.right/0.23.1280.696@0.23.1280.696" timestamp="1582946901557" />
     <state x="169" y="29" key="Maven.ArtifactSearchDialog" timestamp="1582904603090">
       <screen x="0" y="23" width="1280" height="696" />
     </state>
     <state x="169" y="29" key="Maven.ArtifactSearchDialog/0.23.1280.696@0.23.1280.696" timestamp="1582904603090" />
-    <state x="146" y="23" key="SettingsEditor" timestamp="1582797506310">
-      <screen x="0" y="23" width="1280" height="696" />
+    <state x="146" y="23" key="SettingsEditor" timestamp="1583851374751">
+      <screen x="0" y="23" width="1280" height="704" />
     </state>
-    <state x="146" y="23" key="SettingsEditor/0.23.1280.696@0.23.1280.696" timestamp="1582797506310" />
+    <state x="146" y="23" key="SettingsEditor/0.23.1280.696@0.23.1280.696" timestamp="1582947312359" />
+    <state x="146" y="23" key="SettingsEditor/0.23.1280.704@0.23.1280.704" timestamp="1583851374751" />
     <state x="398" y="101" key="com.intellij.testIntegration.createTest.CreateTestDialog" timestamp="1582905365849">
       <screen x="0" y="23" width="1280" height="696" />
     </state>

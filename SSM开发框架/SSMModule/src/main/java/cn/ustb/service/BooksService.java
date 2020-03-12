@@ -6,14 +6,14 @@ import java.util.List;
 
 public interface BooksService {
 
-    public boolean insert(Books vo);
+    public boolean addBook(Books vo);
 
-    public boolean update(Books vo);
+    public boolean updateBook(Books vo);
 
-    public boolean delete(int id);
+    public boolean deleteBook(Integer id);
 
-    public Books get(int id);
+    public Books getBookById(Integer id);
 
-    public List<Books> list();
+    public List<Books> getAllBooks();
 
 }

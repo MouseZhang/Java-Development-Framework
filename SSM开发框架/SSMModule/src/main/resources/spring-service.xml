@@ -14,7 +14,7 @@
      -->
 
     <!-- 3、声明式事务配置 -->
-    <bean id="ransactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+    <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
         <!-- 注入数据源 -->
         <property name="dataSource" ref="dataSource"/>
     </bean>

@@ -37,6 +37,7 @@
     </bean>
 
     <!-- 4、配置dao接口扫描包，动态地实现了dao接口可以注入到Spring容器中 -->
+    <!-- 这样就不用在写dao接口实现类了(BooksMapperImpl) -->
     <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
         <!-- 1、注入sqlSessionFactory -->
         <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"/>
