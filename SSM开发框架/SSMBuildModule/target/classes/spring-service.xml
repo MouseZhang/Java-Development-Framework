@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context
+       https://www.springframework.org/schema/context/spring-context.xsd
+       http://www.springframework.org/schema/aop
+       https://www.springframework.org/schema/aop/spring-aop.xsd
+       http://www.springframework.org/schema/tx
+       https://www.springframework.org/schema/tx/spring-tx.xsd">
+
+    <!-- 1、扫描service包 -->
+    <context:component-scan base-package="cn.ustb.service"/>
+
+    <!-- 2、将业务类注入到Spring，可以通过配置或注解实现
+        <bean id="BooksServiceImpl" class="cn.ustb.service.impl.BooksServiceImpl">
+            <property name="booksMapper" ref="booksMapper"/>
+        </bean>
+     -->
+
+    <!-- 3、声明式事务配置 -->
+    <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <!-- 注入数据源 -->
+        <property name="dataSource" ref="dataSource"/>
+    </bean>
+
+    <!-- 4、AOP事务支持 -->
+    <!-- 1、配置事务通知 -->
+    <tx:advice id="txAdvice" transaction-manager="transactionManager">
+        <!-- 给哪些方法配置事务 -->
+        <!-- 配置事务的传播特性(propagation)，默认REQUIRED -->
+        <tx:attributes>
+            <tx:method name="add" propagation="REQUIRED"/>
+            <tx:method name="update" propagation="REQUIRED"/>
+            <tx:method name="delete" propagation="REQUIRED"/>
+            <tx:method name="get" read-only="true"/>
+            <tx:method name="query" read-only="true"/>
+            <tx:method name="*" propagation="REQUIRED"/>
+        </tx:attributes>
+    </tx:advice>
+
+    <!-- 2、配置事务切入 -->
+    <aop:config>
+        <aop:pointcut id="txPointCut" expression="execution(* cn.ustb.dao.*.*(..))"/>
+        <aop:advisor advice-ref="txAdvice" pointcut-ref="txPointCut"/>
+    </aop:config>
+
+</beans>
