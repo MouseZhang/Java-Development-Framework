@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
+         version="4.0">
+
+    <!--注册DispatcherServlet，是SpringMVC的核心（请求分发器、前端控制器）-->
+    <servlet>
+        <servlet-name>springmvc</servlet-name>
+        <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+        <!--关联一个springmvc的配置文件:【servlet-name】-servlet.xml-->
+        <!--DispatcherServlet要绑定Spring的配置文件-->
+        <init-param>
+            <param-name>contextConfigLocation</param-name>
+            <param-value>classpath:springmvc-servlet.xml</param-value>
+        </init-param>
+        <!--启动级别-1，表示和服务器一起启动-->
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+
+    <!-- SpringMVC中，/与/*的区别：
+            /   只匹配所有的请求，不匹配Jsp页面（不包括.jsp）
+            /*  匹配所有的请求，包括Jsp页面（包括.jsp）
+    -->
+    <servlet-mapping>
+        <servlet-name>springmvc</servlet-name>
+        <url-pattern>/</url-pattern>
+    </servlet-mapping>
+
+</web-app>

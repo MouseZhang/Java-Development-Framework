@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- Spring MVC的核心三要素 -->
+    <!-- 1、处理器映射器 -->
+    <bean class="org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping"/>
+
+    <!-- 2、处理器适配器 -->
+    <bean class="org.springframework.web.servlet.mvc.SimpleControllerHandlerAdapter"/>
+
+    <!-- 3、视图解析器：模版引擎Thymeleaf、Freemarker... -->
+    <!-- 视图解析器:DispatcherServlet给他的ModelAndView
+         1、获取ModelAndView的数据
+         2、解析ModelAndView的视图名
+         3、拼接视图名称，找到对应的视图
+         4、将数据渲染到这个视图上
+    -->
+    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver" id="InternalResourceViewResolver">
+        <!--前缀-->
+        <property name="prefix" value="/WEB-INF/jsp/"/>
+        <!--后缀-->
+        <property name="suffix" value=".jsp"/>
+    </bean>
+
+    <!--BeanNameUrlHandlerMapping处理器：bean-->
+    <bean id="/hello" class="cn.ustb.controller.HelloController"/>
+
+</beans>
