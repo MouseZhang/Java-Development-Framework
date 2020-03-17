@@ -2,9 +2,9 @@
 
 # Java后台开发框架
 
-## SSM框架整合
+## 1 SSM框架整合
 
-### 数据库创建脚本
+### 1.1 数据库创建脚本
 
 > 创建一个存放书籍数据的数据库表。
 
@@ -30,7 +30,7 @@ INSERT INTO books(bookID, bookName, bookCounts, details) VALUES (2, 'MySQL', 10,
 INSERT INTO books(bookID, bookName, bookCounts, details) VALUES (3, 'Linux', 5, '从进门到坐牢');
 ```
 
-### 基本环境搭建
+### 1.2 基本环境搭建
 
 > 1.新建一个Maven工程，并添加web支持。
 >
@@ -192,7 +192,7 @@ log4j.logger.java.sql.ResultSet=DEBUG
 log4j.logger.java.sql.PreparedStatement=DEBUG
 ```
 
-### 编写MyBatis层
+### 1.3 编写MyBatis层
 
 > 1.数据库配置文件database.properties。
 
@@ -383,7 +383,7 @@ public class BooksServiceImpl implements BooksService {
 }
 ```
 
-### 编写Spring层
+### 1.4 编写Spring层
 
 > 1.配置Spring整合MyBatis，这里的数据源使用c3p0连接池子。
 >
@@ -486,7 +486,7 @@ public class BooksServiceImpl implements BooksService {
 </beans>
 ```
 
-### 编写Spring MVC层
+### 1.5 编写Spring MVC层
 
 > 1.编写web.xml配置文件。
 
@@ -575,7 +575,7 @@ public class BooksServiceImpl implements BooksService {
 </beans>
 ```
 
-### 编写Controller和视图层
+### 1.6 编写Controller和视图层
 
 > 1.在cn.ustb.controller包中编写控制层操作，BooksController。
 
@@ -891,6 +891,10 @@ public class BooksController {
 </html>
 ```
 
-### 运行Tomcat
+### 1.7 运行Tomcat
 
 > 运行Tomcat，测试SSM项目整合情况。
+
+## 2 Spring Boot框架
+
+持续更新中 …
