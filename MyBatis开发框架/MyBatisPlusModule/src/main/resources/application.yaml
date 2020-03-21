@@ -1,0 +1,18 @@
+# 开发环境
+# Mac电脑使用安全连接时一般设置为false
+spring:
+  datasource:
+    username: root
+    password: root123
+    url: jdbc:mysql://localhost:3306/mybatis_plus?useSSL=false&useUnicode=true&characterEncoding=utf8&serverTimezone=GMT%2B8
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  profiles:
+    active: dev
+# 日志配置
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  global-config:
+    db-config:
+      logic-delete-value: 1
+      logic-not-delete-value: 0

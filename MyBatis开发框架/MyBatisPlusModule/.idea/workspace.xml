@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="5983face-004d-49ae-80ec-9d348e6d342d" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="MyBatisPlusModule" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="localRepository" value="$PROJECT_DIR$/../../../maven3libs" />
+        <option name="mavenHome" value="$PROJECT_DIR$/../../../maven/apache-maven-3.5.0" />
+        <option name="userSettingsFile" value="$PROJECT_DIR$/../../../maven/apache-maven-3.5.0/conf/settings.xml" />
+      </MavenGeneralSettings>
+    </option>
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="1ZONMJnGCxyDWPYczXYbL6tXiDb" />
+  <component name="ProjectViewState">
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="mysql" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="settings.editor.selected.configurable" value="MavenSettings" />
+  </component>
+  <component name="RunManager" selected="JUnit.WrapperTest.testWrapper6">
+    <configuration name="WrapperTest.testWrapper2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="MyBatisPlusModule" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="cn.ustb.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="cn.ustb" />
+      <option name="MAIN_CLASS_NAME" value="cn.ustb.WrapperTest" />
+      <option name="METHOD_NAME" value="testWrapper2" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="WrapperTest.testWrapper3" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="MyBatisPlusModule" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="cn.ustb.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="cn.ustb" />
+      <option name="MAIN_CLASS_NAME" value="cn.ustb.WrapperTest" />
+      <option name="METHOD_NAME" value="testWrapper3" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="WrapperTest.testWrapper4" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="MyBatisPlusModule" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="cn.ustb.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="cn.ustb" />
+      <option name="MAIN_CLASS_NAME" value="cn.ustb.WrapperTest" />
+      <option name="METHOD_NAME" value="testWrapper4" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="WrapperTest.testWrapper5" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="MyBatisPlusModule" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="cn.ustb.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="cn.ustb" />
+      <option name="MAIN_CLASS_NAME" value="cn.ustb.WrapperTest" />
+      <option name="METHOD_NAME" value="testWrapper5" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="WrapperTest.testWrapper6" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="MyBatisPlusModule" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="cn.ustb.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="cn.ustb" />
+      <option name="MAIN_CLASS_NAME" value="cn.ustb.WrapperTest" />
+      <option name="METHOD_NAME" value="testWrapper6" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MybatisPlusApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="MyBatisPlusModule" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="cn.ustb.MybatisPlusApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.WrapperTest.testWrapper6" />
+        <item itemvalue="JUnit.WrapperTest.testWrapper5" />
+        <item itemvalue="JUnit.WrapperTest.testWrapper4" />
+        <item itemvalue="JUnit.WrapperTest.testWrapper3" />
+        <item itemvalue="JUnit.WrapperTest.testWrapper2" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="5983face-004d-49ae-80ec-9d348e6d342d" name="Default Changelist" comment="" />
+      <created>1584706138082</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1584706138082</updated>
+      <workItem from="1584706157745" duration="2485000" />
+      <workItem from="1584708899884" duration="13055000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="193" y="28" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1584707977776">
+      <screen x="0" y="23" width="1280" height="698" />
+    </state>
+    <state x="193" y="28" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1280.698@0.23.1280.698" timestamp="1584707977776" />
+    <state x="450" y="79" key="#com.intellij.ide.util.MemberChooser" timestamp="1584758772651">
+      <screen x="0" y="23" width="1280" height="704" />
+    </state>
+    <state x="450" y="79" key="#com.intellij.ide.util.MemberChooser/0.23.1280.704@0.23.1280.704" timestamp="1584758772651" />
+    <state width="1098" height="325" key="GridCell.Tab.0.bottom" timestamp="1584800854523">
+      <screen x="0" y="23" width="1280" height="709" />
+    </state>
+    <state width="1098" height="247" key="GridCell.Tab.0.bottom/0.23.1280.696@0.23.1280.696" timestamp="1584756917134" />
+    <state width="1098" height="325" key="GridCell.Tab.0.bottom/0.23.1280.704@0.23.1280.704" timestamp="1584797353238" />
+    <state width="1098" height="219" key="GridCell.Tab.0.bottom/0.23.1280.707@0.23.1280.707" timestamp="1584792979093" />
+    <state width="1098" height="325" key="GridCell.Tab.0.bottom/0.23.1280.709@0.23.1280.709" timestamp="1584800854523" />
+    <state width="1098" height="325" key="GridCell.Tab.0.center" timestamp="1584800854521">
+      <screen x="0" y="23" width="1280" height="709" />
+    </state>
+    <state width="1098" height="247" key="GridCell.Tab.0.center/0.23.1280.696@0.23.1280.696" timestamp="1584756917133" />
+    <state width="1098" height="325" key="GridCell.Tab.0.center/0.23.1280.704@0.23.1280.704" timestamp="1584797353237" />
+    <state width="1098" height="219" key="GridCell.Tab.0.center/0.23.1280.707@0.23.1280.707" timestamp="1584792979091" />
+    <state width="1098" height="325" key="GridCell.Tab.0.center/0.23.1280.709@0.23.1280.709" timestamp="1584800854521" />
+    <state width="1098" height="325" key="GridCell.Tab.0.left" timestamp="1584800854519">
+      <screen x="0" y="23" width="1280" height="709" />
+    </state>
+    <state width="1098" height="247" key="GridCell.Tab.0.left/0.23.1280.696@0.23.1280.696" timestamp="1584756917132" />
+    <state width="1098" height="325" key="GridCell.Tab.0.left/0.23.1280.704@0.23.1280.704" timestamp="1584797353236" />
+    <state width="1098" height="219" key="GridCell.Tab.0.left/0.23.1280.707@0.23.1280.707" timestamp="1584792979091" />
+    <state width="1098" height="325" key="GridCell.Tab.0.left/0.23.1280.709@0.23.1280.709" timestamp="1584800854519" />
+    <state width="1098" height="325" key="GridCell.Tab.0.right" timestamp="1584800854522">
+      <screen x="0" y="23" width="1280" height="709" />
+    </state>
+    <state width="1098" height="247" key="GridCell.Tab.0.right/0.23.1280.696@0.23.1280.696" timestamp="1584756917134" />
+    <state width="1098" height="325" key="GridCell.Tab.0.right/0.23.1280.704@0.23.1280.704" timestamp="1584797353238" />
+    <state width="1098" height="219" key="GridCell.Tab.0.right/0.23.1280.707@0.23.1280.707" timestamp="1584792979092" />
+    <state width="1098" height="325" key="GridCell.Tab.0.right/0.23.1280.709@0.23.1280.709" timestamp="1584800854522" />
+    <state x="102" y="23" key="SettingsEditor" timestamp="1584763180473">
+      <screen x="0" y="23" width="1280" height="707" />
+    </state>
+    <state x="102" y="23" key="SettingsEditor/0.23.1280.696@0.23.1280.696" timestamp="1584756775661" />
+    <state x="102" y="23" key="SettingsEditor/0.23.1280.707@0.23.1280.707" timestamp="1584763180473" />
+    <state x="262" y="164" key="run.anything.popup" timestamp="1584755795395">
+      <screen x="0" y="23" width="1280" height="696" />
+    </state>
+    <state x="262" y="164" key="run.anything.popup/0.23.1280.696@0.23.1280.696" timestamp="1584755795395" />
+  </component>
+</project>
