@@ -4,7 +4,7 @@
 <head>
     <title>SSM框架开发</title>
     <!-- 导入Bootstrap -->
-    <link href="/static/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="${pageContext.request.contextPath}/static/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet"/>
 </head>
 <body>
     <h1>书籍新增页</h1>
