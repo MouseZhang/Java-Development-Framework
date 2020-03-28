@@ -1,0 +1,32 @@
+server:
+  port: 8003
+# MyBatis配置
+mybatis:
+  type-aliases-package: cn.ustb.springcloud.pojo
+  mapper-locations: classpath:mybatis/mapper/*.xml
+  config-location: classpath:mybatis/mybatis-config.xml
+# Spring配置
+spring:
+  application:
+    name: springcloud-provider-dept # 要保证3个服务名称一致
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: org.gjt.mm.mysql.Driver
+    url: jdbc:mysql://localhost:3306/db03?useUnicode=true&characterEncoding=UTF-8&useSSL=false
+    username: root
+    password: root123
+
+# Eureka配置，Provider与注册中心关联
+eureka:
+  client:
+    service-url:
+      # 单机发布：defaultZone: http://localhost:7001/eureka/
+      # 集群发布：
+      defaultZone: http://eureka7001.com:7001/eureka/,http://eureka7002.com:7002/eureka/,http://eureka7003.com:7003/eureka/
+  instance:
+    instance-id: springcloud-provider-dept8003 # 修改Eureka上默认描述信息
+
+# info信息
+info:
+  app.name: ustb-springcloud
+  company.name: https://github.com/mousezhang

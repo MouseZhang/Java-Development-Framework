@@ -10,4 +10,4 @@ eureka:
     service-url: # Eureka监控页面
       # 单机配置：defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
       # 集群配置：
-      defaultZone: http://localhost:7002/eureka/,http://localhost:7003/eureka/
+      defaultZone: http://eureka7002.com:7002/eureka/,http://eureka7003.com:7003/eureka/
