@@ -1,0 +1,23 @@
+server:
+  port: 9527
+spring:
+  application:
+    name: springcloud-zuul
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka7001.com:7001/eureka/,http://eureka7002.com:7002/eureka/,http://eureka7003.com:7003/eureka/
+  instance:
+    instance-id: zuul9527.com
+    prefer-ip-address: true
+# info信息
+info:
+  app.name: ustb-springcloud
+  company.name: https://github.com/mousezhang
+zuul:
+  routes:
+    mydept.serviceId: springcloud-provider-dept
+    mydept.path: /depts/**
+  ignored-services: springcloud-provider-dept # 关闭原访问路径，ignored-services: "*"，表示隐藏全部微服务项目
+  prefix: /api # 添加统一的访问前缀
+  # 此时最终的访问路径是：http://ustb.cn:9527/api/depts/dept/get/1
